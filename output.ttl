@@ -1,4 +1,5 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix ex: <https://example.com/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -13,33 +14,451 @@
 @prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ex:79afed40-afa7-41d8-8e8c-110fa7551d21 a tern:Sampling ;
-    void:inDataset ex:17f8d14e-ed85-4ead-9a25-68e8bcb5e0fa ;
+ex:0295281b-7613-427e-9e26-545018521651 a tern:Observation ;
+    void:inDataset ex:dbe6536b-29f9-431b-980c-93ba55f0e982 ;
+    rdfs:comment "habitat of the occurrence." ;
+    prov:wasAssociatedWith _:N21a116f8303f4f0d98310162fd7fbbc0 ;
+    sosa:hasFeatureOfInterest ex:ebcef19d-187c-4351-a5bc-0915b236fdea ;
+    sosa:hasResult [ a tern:Text ;
+            rdf:value "under rock" ] ;
+    sosa:hasSimpleResult <file:///Users/uqechuc/projects/dwc-occ-records/records-2021-12-01/> ;
+    sosa:observedProperty <http://linked.data.gov.au/def/tern-cv/2090cfd9-8b6b-497b-9512-497456a18b99> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2015-03-22T13:00:00Z"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2015-03-22T13:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/occurrence-method> .
+
+ex:0439f3b7-1719-47e7-9c18-91d62b226da9 a tern:Observation ;
+    void:inDataset ex:52d0642f-34d6-412f-a09e-39f86dcff210 ;
+    rdfs:comment "speciment type status" ;
+    prov:wasAssociatedWith _:N0b067d102bd84974b63e598bdf43c480 ;
+    sosa:hasFeatureOfInterest ex:37632c3a-600f-4894-a5c6-f56a2b5926c8 ;
+    sosa:hasResult [ a tern:Text ;
+            rdf:value "HOLOTYPE" ] ;
+    sosa:hasSimpleResult <file:///Users/uqechuc/projects/dwc-occ-records/records-2021-12-01/HOLOTYPE> ;
+    sosa:observedProperty <http://linked.data.gov.au/def/bdr-cv/specimen-type-status> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2015-01-01T00:00:00"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2015-01-01T00:00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/specimen-method> .
+
+ex:08e1ac9d-f996-446b-855a-e02601aa4189 a tern:Observation ;
+    void:inDataset ex:dbe6536b-29f9-431b-980c-93ba55f0e982 ;
+    rdfs:comment "speciment type status" ;
+    prov:wasAssociatedWith _:N3a1e66e3eaca4237a72ed82fd4c7d12f ;
+    sosa:hasFeatureOfInterest ex:4fd877d1-b116-4974-8e5c-acb013fd525f ;
+    sosa:hasResult [ a tern:Text ;
+            rdf:value "HOLOTYPE" ] ;
+    sosa:hasSimpleResult <file:///Users/uqechuc/projects/dwc-occ-records/records-2021-12-01/HOLOTYPE> ;
+    sosa:observedProperty <http://linked.data.gov.au/def/bdr-cv/specimen-type-status> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2015-01-01T00:00:00"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2015-01-01T00:00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/specimen-method> .
+
+ex:0a2ab6e5-3757-4757-a33c-8e70e502bee2 a tern:Observation ;
+    void:inDataset ex:106537d8-9f75-4338-90fb-d8f1bc781b69 ;
+    rdfs:comment "specimen taxonomic information" ;
     prov:wasAssociatedWith [ a sdo:Person ;
-            sdo:name "Parsons, B." ] ;
-    sosa:hasFeatureOfInterest ex:393a0e6f-9d3c-4a56-8904-a4595d110299 ;
-    sosa:hasResult ex:670eed51-dfee-48f0-994f-8999b04c68bf ;
-    sosa:resultTime "2014-02-23T13:00:00+00:00"^^xsd:dateTime ;
+            void:inDataset ex:106537d8-9f75-4338-90fb-d8f1bc781b69 ;
+            sdo:name "Harvey, M.S." ] ;
+    sosa:hasFeatureOfInterest ex:b8d1f1f3-d178-4373-bb4a-0860605ae8bf ;
+    sosa:hasResult _:Na591956120c746489c8547fabc1640c8 ;
+    sosa:hasSimpleResult _:Na591956120c746489c8547fabc1640c8 ;
+    sosa:observedProperty <http://linked.data.gov.au/def/tern-cv/70646576-6dc7-4bc5-a9d8-c4c366850df0> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2015-01-01T00:00:00"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2015-01-01T00:00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/specimen-method> .
+
+ex:0fc55d75-160b-42a3-ba93-980056d891b9 a tern:Observation ;
+    void:inDataset ex:106537d8-9f75-4338-90fb-d8f1bc781b69 ;
+    rdfs:comment "Sex of the occurrence." ;
+    prov:wasAssociatedWith _:Na3f0e2d3c5d24ffc878ee0d60b5eca06 ;
+    sosa:hasFeatureOfInterest ex:007ef106-520e-45ed-89e5-046bdefa3430 ;
+    sosa:hasResult [ a tern:Text ;
+            rdf:value "MALE" ] ;
+    sosa:hasSimpleResult <file:///Users/uqechuc/projects/dwc-occ-records/records-2021-12-01/MALE> ;
+    sosa:observedProperty <http://linked.data.gov.au/def/tern-cv/05cbf534-c233-4aa8-a08c-00b28976ed36> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2011-03-29T13:00:00Z"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2011-03-29T13:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/occurrence-method> .
+
+ex:13ae04d3-ed00-41bc-a512-7a653b1d49a0 a tern:Observation ;
+    void:inDataset ex:52d0642f-34d6-412f-a09e-39f86dcff210 ;
+    rdfs:comment "life stage of the occurrence." ;
+    prov:wasAssociatedWith _:N25934f2069894df6b3d6d722bce3249e ;
+    sosa:hasFeatureOfInterest ex:31cc5563-6e60-42b7-9d33-a1ba15ac07f4 ;
+    sosa:hasResult [ a tern:Text ;
+            rdf:value "Adult" ] ;
+    sosa:hasSimpleResult <file:///Users/uqechuc/projects/dwc-occ-records/records-2021-12-01/Adult> ;
+    sosa:observedProperty <http://linked.data.gov.au/def/tern-cv/abb0ee19-b2e8-42f3-8a25-d1f39ca3ebc3> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2006-09-04T00:00:00"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2006-09-04T00:00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/occurrence-method> .
+
+ex:1e65c815-27e3-4b2f-811d-1572c75e0253 a tern:Observation ;
+    void:inDataset ex:dbe6536b-29f9-431b-980c-93ba55f0e982 ;
+    rdfs:comment "specimen taxonomic information" ;
+    prov:wasAssociatedWith _:N3a1e66e3eaca4237a72ed82fd4c7d12f ;
+    sosa:hasFeatureOfInterest ex:4fd877d1-b116-4974-8e5c-acb013fd525f ;
+    sosa:hasResult _:N57c122255858427e95774d6853736de3 ;
+    sosa:hasSimpleResult _:N57c122255858427e95774d6853736de3 ;
+    sosa:observedProperty <http://linked.data.gov.au/def/tern-cv/70646576-6dc7-4bc5-a9d8-c4c366850df0> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2015-01-01T00:00:00"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2015-01-01T00:00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/specimen-method> .
+
+ex:254d6e80-1557-494f-a7b7-3bda8f367964 a tern:Sampling ;
+    void:inDataset ex:dbe6536b-29f9-431b-980c-93ba55f0e982 ;
+    prov:wasAssociatedWith _:N21a116f8303f4f0d98310162fd7fbbc0 ;
+    sosa:hasFeatureOfInterest ex:ebcef19d-187c-4351-a5bc-0915b236fdea ;
+    sosa:hasResult ex:4fd877d1-b116-4974-8e5c-acb013fd525f ;
+    sosa:resultTime "2015-03-22T13:00:00+00:00"^^xsd:dateTime ;
     sosa:usedProcedure [ a sosa:Procedure ;
             dcterms:description "wet (in ethanol or some other preservative)" ] .
 
-ex:917632c1-1791-401b-ac15-01f05c672061 a tern:Observation ;
-    void:inDataset ex:17f8d14e-ed85-4ead-9a25-68e8bcb5e0fa ;
-    rdfs:comment "life stage of the occurrence." ;
-    prov:wasAssociatedWith [ a sdo:Person ;
-            sdo:name "Parsons, B." ] ;
-    sosa:hasFeatureOfInterest ex:393a0e6f-9d3c-4a56-8904-a4595d110299 ;
+ex:33d599df-7e13-418b-a0de-99d217ffd97e a tern:Observation ;
+    void:inDataset ex:52d0642f-34d6-412f-a09e-39f86dcff210 ;
+    rdfs:comment "Sex of the occurrence." ;
+    prov:wasAssociatedWith _:N25934f2069894df6b3d6d722bce3249e ;
+    sosa:hasFeatureOfInterest ex:31cc5563-6e60-42b7-9d33-a1ba15ac07f4 ;
     sosa:hasResult [ a tern:Text ;
-            rdf:value "Adult" ] ;
-    sosa:observedProperty <http://linked.data.gov.au/def/tern-cv/abb0ee19-b2e8-42f3-8a25-d1f39ca3ebc3> ;
+            rdf:value "MALE" ] ;
+    sosa:hasSimpleResult <file:///Users/uqechuc/projects/dwc-occ-records/records-2021-12-01/MALE> ;
+    sosa:observedProperty <http://linked.data.gov.au/def/tern-cv/05cbf534-c233-4aa8-a08c-00b28976ed36> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2006-09-04T00:00:00"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2006-09-04T00:00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/occurrence-method> .
+
+ex:3bb43289-114d-47e9-bf76-65ee2ea85ccd a tern:Observation ;
+    void:inDataset ex:ad92a331-4f40-4163-9140-0ece3900c296 ;
+    rdfs:comment "habitat of the occurrence." ;
+    prov:wasAssociatedWith _:N9d3c2e1dcec7464690a407b6b7630a08 ;
+    sosa:hasFeatureOfInterest ex:7794d5f7-41d4-4db3-af01-0e0e1b7f6f4a ;
+    sosa:hasResult [ a tern:Text ;
+            rdf:value "Drainage Line" ] ;
+    sosa:hasSimpleResult <file:///Users/uqechuc/projects/dwc-occ-records/records-2021-12-01/> ;
+    sosa:observedProperty <http://linked.data.gov.au/def/tern-cv/2090cfd9-8b6b-497b-9512-497456a18b99> ;
     sosa:phenomenonTime [ a tern:Instant ;
             time:inXSDDateTimeStamp "2014-02-23T13:00:00Z"^^xsd:dateTimeStamp ] ;
     sosa:resultTime "2014-02-23T13:00:00+00:00"^^xsd:dateTime ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/occurrence-method> ;
-    tern:hasSimpleResult "Adult" .
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/occurrence-method> .
 
-ex:92dda1e7-c05b-4749-a7a5-fbe753abf1dc a tern:Sampling ;
-    void:inDataset ex:17f8d14e-ed85-4ead-9a25-68e8bcb5e0fa ;
+ex:414cf030-18f6-4973-9d03-00e0ad066558 a tern:Sampling ;
+    void:inDataset ex:d570563e-e82c-422d-b956-736fa19e5473 ;
+    prov:wasAssociatedWith _:Ncb795b8bc97848c3b140468a6b3dbff7 ;
+    sosa:hasFeatureOfInterest ex:d218b04a-998c-4e40-aee3-f9aa2acc4b86 ;
+    sosa:hasResult ex:01cedcc4-fba9-4d2f-aada-eedc3380718b ;
+    sosa:resultTime "2006-09-04T00:00:00"^^xsd:dateTime ;
+    sosa:usedProcedure [ a sosa:Procedure ;
+            dcterms:description "wet (in ethanol or some other preservative)" ] .
+
+ex:4cbc9e57-e378-476c-ae07-2ecf8762f661 a tern:Observation ;
+    void:inDataset ex:106537d8-9f75-4338-90fb-d8f1bc781b69 ;
+    rdfs:comment "life stage of the occurrence." ;
+    prov:wasAssociatedWith _:Na3f0e2d3c5d24ffc878ee0d60b5eca06 ;
+    sosa:hasFeatureOfInterest ex:007ef106-520e-45ed-89e5-046bdefa3430 ;
+    sosa:hasResult [ a tern:Text ;
+            rdf:value "Adult" ] ;
+    sosa:hasSimpleResult <file:///Users/uqechuc/projects/dwc-occ-records/records-2021-12-01/Adult> ;
+    sosa:observedProperty <http://linked.data.gov.au/def/tern-cv/abb0ee19-b2e8-42f3-8a25-d1f39ca3ebc3> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2011-03-29T13:00:00Z"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2011-03-29T13:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/occurrence-method> .
+
+ex:51492c88-8815-43ed-ab33-fc11a14a7e9d a tern:Observation ;
+    void:inDataset ex:d1e747f1-4ef0-4eb0-837f-418d78f62677 ;
+    rdfs:comment "Sex of the occurrence." ;
+    prov:wasAssociatedWith _:N5928e9fc35a84421bbda12e166c7901e ;
+    sosa:hasFeatureOfInterest ex:bdf669d7-cb17-4ed5-8dfb-e3a110294745 ;
+    sosa:hasResult [ a tern:Text ;
+            rdf:value "MALE" ] ;
+    sosa:hasSimpleResult <file:///Users/uqechuc/projects/dwc-occ-records/records-2021-12-01/MALE> ;
+    sosa:observedProperty <http://linked.data.gov.au/def/tern-cv/05cbf534-c233-4aa8-a08c-00b28976ed36> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2015-03-25T13:00:00Z"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2015-03-25T13:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/occurrence-method> .
+
+ex:51ea5bd8-5e79-4394-b228-e1723c4bb5a1 a tern:Sampling ;
+    dcterms:identifier "4-15" ;
+    void:inDataset ex:106537d8-9f75-4338-90fb-d8f1bc781b69 ;
+    geo:hasGeometry [ a geo:Point ;
+            geo:asWKT "POINT(119.064722 -21.450278)" ;
+            wgs:lat -2.145028e+01 ;
+            wgs:long 1.190647e+02 ;
+            tern-loc:coordinateUncertainty 5e+01 ] ;
+    geo:sfWithin <http://linked.data.gov.au/dataset/asgs2016/stateorterritory/5>,
+        <https://sws.geonames.org/2077456/> ;
+    rdfs:comment "ca. 50 km SE. of Wodgina Mine Site" ;
+    prov:wasAssociatedWith _:Na3f0e2d3c5d24ffc878ee0d60b5eca06 ;
+    sosa:hasFeatureOfInterest <http://linked.data.gov.au/dataset/asgs2016/stateorterritory/5> ;
+    sosa:hasResult ex:007ef106-520e-45ed-89e5-046bdefa3430 ;
+    sosa:resultTime "2011-03-29T13:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure ex:occurrence-method ;
+    tern:samplingType <https://linked.data.gov.au/def/bdr-cv/hand+collected> .
+
+ex:55bde524-fb28-4fbe-a43c-3357c0c4a1d3 a tern:Observation ;
+    void:inDataset ex:7c2523fa-dc98-4700-8400-5eb09f5b890e ;
+    rdfs:comment "habitat of the occurrence." ;
+    prov:wasAssociatedWith _:N98746182b29e4608a5274c2c6c5ff985 ;
+    sosa:hasFeatureOfInterest ex:2a96c1b5-c529-40c7-8317-9c17e4664839 ;
+    sosa:hasResult [ a tern:Text ;
+            rdf:value "gully" ] ;
+    sosa:hasSimpleResult <file:///Users/uqechuc/projects/dwc-occ-records/records-2021-12-01/gully> ;
+    sosa:observedProperty <http://linked.data.gov.au/def/tern-cv/2090cfd9-8b6b-497b-9512-497456a18b99> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2011-03-29T13:00:00Z"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2011-03-29T13:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/occurrence-method> .
+
+ex:5a3ee548-9e82-4b8c-96f9-1336df7836c8 a tern:Observation ;
+    void:inDataset ex:d1e747f1-4ef0-4eb0-837f-418d78f62677 ;
+    rdfs:comment "habitat of the occurrence." ;
+    prov:wasAssociatedWith _:N5928e9fc35a84421bbda12e166c7901e ;
+    sosa:hasFeatureOfInterest ex:bdf669d7-cb17-4ed5-8dfb-e3a110294745 ;
+    sosa:hasResult [ a tern:Text ;
+            rdf:value "under rock" ] ;
+    sosa:hasSimpleResult <file:///Users/uqechuc/projects/dwc-occ-records/records-2021-12-01/> ;
+    sosa:observedProperty <http://linked.data.gov.au/def/tern-cv/2090cfd9-8b6b-497b-9512-497456a18b99> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2015-03-25T13:00:00Z"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2015-03-25T13:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/occurrence-method> .
+
+ex:6a95ad42-4039-45d1-a202-98c0149273f3 a tern:Observation ;
+    void:inDataset ex:d570563e-e82c-422d-b956-736fa19e5473 ;
+    rdfs:comment "Sex of the occurrence." ;
+    prov:wasAssociatedWith _:Ncb795b8bc97848c3b140468a6b3dbff7 ;
+    sosa:hasFeatureOfInterest ex:d218b04a-998c-4e40-aee3-f9aa2acc4b86 ;
+    sosa:hasResult [ a tern:Text ;
+            rdf:value "FEMALE" ] ;
+    sosa:hasSimpleResult <file:///Users/uqechuc/projects/dwc-occ-records/records-2021-12-01/FEMALE> ;
+    sosa:observedProperty <http://linked.data.gov.au/def/tern-cv/05cbf534-c233-4aa8-a08c-00b28976ed36> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2006-09-04T00:00:00"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2006-09-04T00:00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/occurrence-method> .
+
+ex:6ae55a9c-11ea-4dba-90d2-59e000f8677d a tern:Observation ;
+    void:inDataset ex:d1e747f1-4ef0-4eb0-837f-418d78f62677 ;
+    rdfs:comment "life stage of the occurrence." ;
+    prov:wasAssociatedWith _:N5928e9fc35a84421bbda12e166c7901e ;
+    sosa:hasFeatureOfInterest ex:bdf669d7-cb17-4ed5-8dfb-e3a110294745 ;
+    sosa:hasResult [ a tern:Text ;
+            rdf:value "Adult" ] ;
+    sosa:hasSimpleResult <file:///Users/uqechuc/projects/dwc-occ-records/records-2021-12-01/Adult> ;
+    sosa:observedProperty <http://linked.data.gov.au/def/tern-cv/abb0ee19-b2e8-42f3-8a25-d1f39ca3ebc3> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2015-03-25T13:00:00Z"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2015-03-25T13:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/occurrence-method> .
+
+ex:705dd19d-3eee-4716-a318-c91bdf2fb2b3 a tern:Observation ;
+    void:inDataset ex:7c2523fa-dc98-4700-8400-5eb09f5b890e ;
+    rdfs:comment "Sex of the occurrence." ;
+    prov:wasAssociatedWith _:N98746182b29e4608a5274c2c6c5ff985 ;
+    sosa:hasFeatureOfInterest ex:2a96c1b5-c529-40c7-8317-9c17e4664839 ;
+    sosa:hasResult [ a tern:Text ;
+            rdf:value "MALE" ] ;
+    sosa:hasSimpleResult <file:///Users/uqechuc/projects/dwc-occ-records/records-2021-12-01/MALE> ;
+    sosa:observedProperty <http://linked.data.gov.au/def/tern-cv/05cbf534-c233-4aa8-a08c-00b28976ed36> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2011-03-29T13:00:00Z"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2011-03-29T13:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/occurrence-method> .
+
+ex:7768d308-adf8-48c3-91b5-ea57ba72dbab a tern:Sampling ;
+    void:inDataset ex:dbe6536b-29f9-431b-980c-93ba55f0e982 ;
+    geo:hasGeometry [ a geo:Point ;
+            geo:asWKT "POINT(117.329444 -21.393889)" ;
+            wgs:lat -2.139389e+01 ;
+            wgs:long 1.173294e+02 ;
+            tern-loc:coordinateUncertainty 5e+01 ;
+            tern-loc:elevation 1.81e+02 ] ;
+    geo:sfWithin <http://linked.data.gov.au/dataset/asgs2016/stateorterritory/5>,
+        <https://sws.geonames.org/2077456/> ;
+    rdfs:comment "Millstream-Chichester National Park, George River, 2.2 km SE. of Mt Montagu" ;
+    prov:wasAssociatedWith _:N21a116f8303f4f0d98310162fd7fbbc0 ;
+    sosa:hasFeatureOfInterest <http://linked.data.gov.au/dataset/asgs2016/stateorterritory/5> ;
+    sosa:hasResult ex:ebcef19d-187c-4351-a5bc-0915b236fdea ;
+    sosa:resultTime "2015-03-22T13:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure ex:occurrence-method .
+
+ex:7c47aa6a-a828-473f-8ade-3c2de54cafbf a tern:Sampling ;
+    void:inDataset ex:106537d8-9f75-4338-90fb-d8f1bc781b69 ;
+    prov:wasAssociatedWith _:Na3f0e2d3c5d24ffc878ee0d60b5eca06 ;
+    sosa:hasFeatureOfInterest ex:007ef106-520e-45ed-89e5-046bdefa3430 ;
+    sosa:hasResult ex:b8d1f1f3-d178-4373-bb4a-0860605ae8bf ;
+    sosa:resultTime "2011-03-29T13:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure [ a sosa:Procedure ;
+            dcterms:description "wet (in ethanol or some other preservative)" ] .
+
+ex:7d419fbb-e110-4f2a-b698-445f718017e9 a tern:Observation ;
+    void:inDataset ex:d1e747f1-4ef0-4eb0-837f-418d78f62677 ;
+    rdfs:comment "speciment type status" ;
+    prov:wasAssociatedWith _:Nba8d89d0ac394825aea9930324a0f5c0 ;
+    sosa:hasFeatureOfInterest ex:929710dd-14bc-48f3-a0cc-67f80c60d4f1 ;
+    sosa:hasResult [ a tern:Text ;
+            rdf:value "PARATYPE" ] ;
+    sosa:hasSimpleResult <file:///Users/uqechuc/projects/dwc-occ-records/records-2021-12-01/PARATYPE> ;
+    sosa:observedProperty <http://linked.data.gov.au/def/bdr-cv/specimen-type-status> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2015-01-01T00:00:00"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2015-01-01T00:00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/specimen-method> .
+
+ex:7f1997cb-2140-449c-9d03-f522272f827c a tern:Observation ;
+    void:inDataset ex:dbe6536b-29f9-431b-980c-93ba55f0e982 ;
+    rdfs:comment "life stage of the occurrence." ;
+    prov:wasAssociatedWith _:N21a116f8303f4f0d98310162fd7fbbc0 ;
+    sosa:hasFeatureOfInterest ex:ebcef19d-187c-4351-a5bc-0915b236fdea ;
+    sosa:hasResult [ a tern:Text ;
+            rdf:value "Juvenile" ] ;
+    sosa:hasSimpleResult <file:///Users/uqechuc/projects/dwc-occ-records/records-2021-12-01/Juvenile> ;
+    sosa:observedProperty <http://linked.data.gov.au/def/tern-cv/abb0ee19-b2e8-42f3-8a25-d1f39ca3ebc3> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2015-03-22T13:00:00Z"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2015-03-22T13:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/occurrence-method> .
+
+ex:836690e1-263b-4d64-9d60-b2a190bbdf1d a tern:Observation ;
+    void:inDataset ex:d570563e-e82c-422d-b956-736fa19e5473 ;
+    rdfs:comment "specimen taxonomic information" ;
+    prov:wasAssociatedWith _:Nef408888de764da982d04834231e65e1 ;
+    sosa:hasFeatureOfInterest ex:01cedcc4-fba9-4d2f-aada-eedc3380718b ;
+    sosa:hasResult _:Nc4be5c4033124b6c8fec2d6762511225 ;
+    sosa:hasSimpleResult _:Nc4be5c4033124b6c8fec2d6762511225 ;
+    sosa:observedProperty <http://linked.data.gov.au/def/tern-cv/70646576-6dc7-4bc5-a9d8-c4c366850df0> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2015-01-01T00:00:00"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2015-01-01T00:00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/specimen-method> .
+
+ex:83921018-c6e6-47f8-a20b-212c63175e5a a tern:Sampling ;
+    dcterms:identifier "4-135" ;
+    void:inDataset ex:951bfe21-c529-453b-afd0-d2373d36213b ;
+    geo:hasGeometry [ a geo:Point ;
+            geo:asWKT "POINT(119.064722 -21.450278)" ;
+            wgs:lat -2.145028e+01 ;
+            wgs:long 1.190647e+02 ;
+            tern-loc:coordinateUncertainty 5e+01 ] ;
+    geo:sfWithin <http://linked.data.gov.au/dataset/asgs2016/stateorterritory/5>,
+        <https://sws.geonames.org/2077456/> ;
+    rdfs:comment "ca. 50 km SE. of Wodgina Mine Site" ;
+    prov:wasAssociatedWith _:Ndba893e51d154a229ad5e8a3c07c2804 ;
+    sosa:hasFeatureOfInterest <http://linked.data.gov.au/dataset/asgs2016/stateorterritory/5> ;
+    sosa:hasResult ex:47bc008f-0c7b-4a9f-affb-1be2ee3fe991 ;
+    sosa:resultTime "2011-03-29T13:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure ex:occurrence-method ;
+    tern:samplingType <https://linked.data.gov.au/def/bdr-cv/wet+pitfall+trap> .
+
+ex:858828e1-87db-45b0-bea6-01575f07ca0b a tern:Observation ;
+    void:inDataset ex:52d0642f-34d6-412f-a09e-39f86dcff210 ;
+    rdfs:comment "habitat of the occurrence." ;
+    prov:wasAssociatedWith _:N25934f2069894df6b3d6d722bce3249e ;
+    sosa:hasFeatureOfInterest ex:31cc5563-6e60-42b7-9d33-a1ba15ac07f4 ;
+    sosa:hasResult [ a tern:Text ;
+            rdf:value "under rocks" ] ;
+    sosa:hasSimpleResult <file:///Users/uqechuc/projects/dwc-occ-records/records-2021-12-01/> ;
+    sosa:observedProperty <http://linked.data.gov.au/def/tern-cv/2090cfd9-8b6b-497b-9512-497456a18b99> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2006-09-04T00:00:00"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2006-09-04T00:00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/occurrence-method> .
+
+ex:8682ccf5-010c-479f-8d95-5e77e99a0ca4 a tern:Sampling ;
+    dcterms:identifier "4-157" ;
+    void:inDataset ex:7c2523fa-dc98-4700-8400-5eb09f5b890e ;
+    geo:hasGeometry [ a geo:Point ;
+            geo:asWKT "POINT(119.064722 -21.450278)" ;
+            wgs:lat -2.145028e+01 ;
+            wgs:long 1.190647e+02 ;
+            tern-loc:coordinateUncertainty 5e+01 ] ;
+    geo:sfWithin <http://linked.data.gov.au/dataset/asgs2016/stateorterritory/5>,
+        <https://sws.geonames.org/2077456/> ;
+    rdfs:comment "ca. 50 km SE. of Wodgina Mine Site" ;
+    prov:wasAssociatedWith _:N98746182b29e4608a5274c2c6c5ff985 ;
+    sosa:hasFeatureOfInterest <http://linked.data.gov.au/dataset/asgs2016/stateorterritory/5> ;
+    sosa:hasResult ex:2a96c1b5-c529-40c7-8317-9c17e4664839 ;
+    sosa:resultTime "2011-03-29T13:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure ex:occurrence-method ;
+    tern:samplingType <https://linked.data.gov.au/def/bdr-cv/tullgren> .
+
+ex:8795b406-266d-4913-8fd6-865c95df016b a tern:Sampling ;
+    void:inDataset ex:7c2523fa-dc98-4700-8400-5eb09f5b890e ;
+    prov:wasAssociatedWith _:N98746182b29e4608a5274c2c6c5ff985 ;
+    sosa:hasFeatureOfInterest ex:2a96c1b5-c529-40c7-8317-9c17e4664839 ;
+    sosa:hasResult ex:e8f24b5b-f725-49ef-be8f-011271f6d1ba ;
+    sosa:resultTime "2011-03-29T13:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure [ a sosa:Procedure ;
+            dcterms:description "wet (in ethanol or some other preservative)" ] .
+
+ex:895ddac7-cb37-4903-ad54-2e60c8d0068c a tern:Observation ;
+    void:inDataset ex:d1e747f1-4ef0-4eb0-837f-418d78f62677 ;
+    rdfs:comment "specimen taxonomic information" ;
+    prov:wasAssociatedWith _:Nba8d89d0ac394825aea9930324a0f5c0 ;
+    sosa:hasFeatureOfInterest ex:929710dd-14bc-48f3-a0cc-67f80c60d4f1 ;
+    sosa:hasResult _:Ndc865ea492a145889251ce857d8f7819 ;
+    sosa:hasSimpleResult _:Ndc865ea492a145889251ce857d8f7819 ;
+    sosa:observedProperty <http://linked.data.gov.au/def/tern-cv/70646576-6dc7-4bc5-a9d8-c4c366850df0> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2015-01-01T00:00:00"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2015-01-01T00:00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/specimen-method> .
+
+ex:8a8982b1-5a86-4132-8b15-facf4e4093b9 a tern:Observation ;
+    void:inDataset ex:7c2523fa-dc98-4700-8400-5eb09f5b890e ;
+    rdfs:comment "life stage of the occurrence." ;
+    prov:wasAssociatedWith _:N98746182b29e4608a5274c2c6c5ff985 ;
+    sosa:hasFeatureOfInterest ex:2a96c1b5-c529-40c7-8317-9c17e4664839 ;
+    sosa:hasResult [ a tern:Text ;
+            rdf:value "Adult" ] ;
+    sosa:hasSimpleResult <file:///Users/uqechuc/projects/dwc-occ-records/records-2021-12-01/Adult> ;
+    sosa:observedProperty <http://linked.data.gov.au/def/tern-cv/abb0ee19-b2e8-42f3-8a25-d1f39ca3ebc3> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2011-03-29T13:00:00Z"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2011-03-29T13:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/occurrence-method> .
+
+ex:8babea83-618b-4c2c-bcf4-1558280a7555 a tern:Sampling ;
+    void:inDataset ex:52d0642f-34d6-412f-a09e-39f86dcff210 ;
+    geo:hasGeometry [ a geo:Point ;
+            geo:asWKT "POINT(119.196944 -21.138056)" ;
+            wgs:lat -2.113806e+01 ;
+            wgs:long 1.191969e+02 ;
+            tern-loc:coordinateUncertainty 5e+01 ] ;
+    geo:sfWithin <http://linked.data.gov.au/dataset/asgs2016/stateorterritory/5>,
+        <https://sws.geonames.org/2077456/> ;
+    rdfs:comment "Sulphur Springs, site SUSS 11" ;
+    prov:wasAssociatedWith _:N25934f2069894df6b3d6d722bce3249e ;
+    sosa:hasFeatureOfInterest <http://linked.data.gov.au/dataset/asgs2016/stateorterritory/5> ;
+    sosa:hasResult ex:31cc5563-6e60-42b7-9d33-a1ba15ac07f4 ;
+    sosa:resultTime "2006-09-04T00:00:00"^^xsd:dateTime ;
+    sosa:usedProcedure ex:occurrence-method .
+
+ex:8f1e786d-3ac0-445b-9f9a-c92afbf5205d a tern:Observation ;
+    void:inDataset ex:951bfe21-c529-453b-afd0-d2373d36213b ;
+    rdfs:comment "habitat of the occurrence." ;
+    prov:wasAssociatedWith _:Ndba893e51d154a229ad5e8a3c07c2804 ;
+    sosa:hasFeatureOfInterest ex:47bc008f-0c7b-4a9f-affb-1be2ee3fe991 ;
+    sosa:hasResult [ a tern:Text ;
+            rdf:value "gully" ] ;
+    sosa:hasSimpleResult "gully" ;
+    sosa:observedProperty <http://linked.data.gov.au/def/tern-cv/2090cfd9-8b6b-497b-9512-497456a18b99> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2011-03-29T13:00:00Z"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2011-03-29T13:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/occurrence-method> .
+
+ex:95412663-351f-4e75-b0a9-537c4a60ef10 a tern:Sampling ;
+    void:inDataset ex:ad92a331-4f40-4163-9140-0ece3900c296 ;
     geo:hasGeometry [ a geo:Point ;
             geo:asWKT "POINT(119.618333 -21.388611)" ;
             wgs:lat -2.138861e+01 ;
@@ -48,45 +467,413 @@ ex:92dda1e7-c05b-4749-a7a5-fbe753abf1dc a tern:Sampling ;
     geo:sfWithin <http://linked.data.gov.au/dataset/asgs2016/stateorterritory/5>,
         <https://sws.geonames.org/2077456/> ;
     rdfs:comment "Corunna Downs Station, ca. 160 km SE. of Port Hedland" ;
-    prov:wasAssociatedWith [ a sdo:Person ;
-            sdo:name "Parsons, B." ] ;
+    prov:wasAssociatedWith _:N9d3c2e1dcec7464690a407b6b7630a08 ;
     sosa:hasFeatureOfInterest <http://linked.data.gov.au/dataset/asgs2016/stateorterritory/5> ;
-    sosa:hasResult ex:393a0e6f-9d3c-4a56-8904-a4595d110299 ;
+    sosa:hasResult ex:7794d5f7-41d4-4db3-af01-0e0e1b7f6f4a ;
     sosa:resultTime "2014-02-23T13:00:00+00:00"^^xsd:dateTime ;
     sosa:usedProcedure ex:occurrence-method ;
     tern:samplingType <https://linked.data.gov.au/def/bdr-cv/Targeted+Searching> .
 
-ex:e2d78664-6180-4704-9e24-8a5b015e0f4b a tern:Observation ;
-    void:inDataset ex:17f8d14e-ed85-4ead-9a25-68e8bcb5e0fa ;
-    rdfs:comment "Sex of the occurrence." ;
+ex:a2b081b4-aaf1-4dd1-8d58-4105c9f2125f a tern:Observation ;
+    void:inDataset ex:951bfe21-c529-453b-afd0-d2373d36213b ;
+    rdfs:comment "specimen taxonomic information" ;
     prov:wasAssociatedWith [ a sdo:Person ;
-            sdo:name "Parsons, B." ] ;
-    sosa:hasFeatureOfInterest ex:393a0e6f-9d3c-4a56-8904-a4595d110299 ;
+            void:inDataset ex:951bfe21-c529-453b-afd0-d2373d36213b ;
+            sdo:name "Harvey, M.S." ] ;
+    sosa:hasFeatureOfInterest ex:04390645-a64f-4a17-ac46-74b6d44e88a5 ;
+    sosa:hasResult _:N8ab537193fea4a74be40b964f6afae59 ;
+    sosa:hasSimpleResult _:N8ab537193fea4a74be40b964f6afae59 ;
+    sosa:observedProperty <http://linked.data.gov.au/def/tern-cv/70646576-6dc7-4bc5-a9d8-c4c366850df0> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2015-01-01T00:00:00"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2015-01-01T00:00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/specimen-method> .
+
+ex:aaf6d989-5a3f-4658-bd21-c970ccb1c5d4 a tern:Observation ;
+    void:inDataset ex:ad92a331-4f40-4163-9140-0ece3900c296 ;
+    rdfs:comment "Sex of the occurrence." ;
+    prov:wasAssociatedWith _:N9d3c2e1dcec7464690a407b6b7630a08 ;
+    sosa:hasFeatureOfInterest ex:7794d5f7-41d4-4db3-af01-0e0e1b7f6f4a ;
     sosa:hasResult [ a tern:Text ;
             rdf:value "FEMALE" ] ;
+    sosa:hasSimpleResult <file:///Users/uqechuc/projects/dwc-occ-records/records-2021-12-01/FEMALE> ;
     sosa:observedProperty <http://linked.data.gov.au/def/tern-cv/05cbf534-c233-4aa8-a08c-00b28976ed36> ;
     sosa:phenomenonTime [ a tern:Instant ;
             time:inXSDDateTimeStamp "2014-02-23T13:00:00Z"^^xsd:dateTimeStamp ] ;
     sosa:resultTime "2014-02-23T13:00:00+00:00"^^xsd:dateTime ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/occurrence-method> ;
-    tern:hasSimpleResult "FEMALE" .
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/occurrence-method> .
 
-ex:670eed51-dfee-48f0-994f-8999b04c68bf a tern:MaterialSample ;
-    void:inDataset ex:17f8d14e-ed85-4ead-9a25-68e8bcb5e0fa ;
+ex:b3336103-55f5-4716-96d0-0ecdfe52b65e a tern:Sampling ;
+    void:inDataset ex:d1e747f1-4ef0-4eb0-837f-418d78f62677 ;
+    geo:hasGeometry [ a geo:Point ;
+            geo:asWKT "POINT(117.329444 -21.393889)" ;
+            wgs:lat -2.139389e+01 ;
+            wgs:long 1.173294e+02 ;
+            tern-loc:coordinateUncertainty 5e+01 ;
+            tern-loc:elevation 1.81e+02 ] ;
+    geo:sfWithin <http://linked.data.gov.au/dataset/asgs2016/stateorterritory/5>,
+        <https://sws.geonames.org/2077456/> ;
+    rdfs:comment "Millstream-Chichester National Park, George River, 2.2 km SE. of Mt Montagu" ;
+    prov:wasAssociatedWith _:N5928e9fc35a84421bbda12e166c7901e ;
+    sosa:hasFeatureOfInterest <http://linked.data.gov.au/dataset/asgs2016/stateorterritory/5> ;
+    sosa:hasResult ex:bdf669d7-cb17-4ed5-8dfb-e3a110294745 ;
+    sosa:resultTime "2015-03-25T13:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure ex:occurrence-method .
+
+ex:b89f5088-5b9a-4f46-898e-7fad7d871cbd a tern:Sampling ;
+    void:inDataset ex:951bfe21-c529-453b-afd0-d2373d36213b ;
+    prov:wasAssociatedWith _:Ndba893e51d154a229ad5e8a3c07c2804 ;
+    sosa:hasFeatureOfInterest ex:47bc008f-0c7b-4a9f-affb-1be2ee3fe991 ;
+    sosa:hasResult ex:04390645-a64f-4a17-ac46-74b6d44e88a5 ;
+    sosa:resultTime "2011-03-29T13:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure [ a sosa:Procedure ;
+            dcterms:description "wet (in ethanol or some other preservative)" ] .
+
+ex:bea0e532-37f3-4a4b-b401-fdc264fe2de2 a tern:Observation ;
+    void:inDataset ex:951bfe21-c529-453b-afd0-d2373d36213b ;
+    rdfs:comment "life stage of the occurrence." ;
+    prov:wasAssociatedWith _:Ndba893e51d154a229ad5e8a3c07c2804 ;
+    sosa:hasFeatureOfInterest ex:47bc008f-0c7b-4a9f-affb-1be2ee3fe991 ;
+    sosa:hasResult [ a tern:Text ;
+            rdf:value "Juvenile" ] ;
+    sosa:hasSimpleResult "Juvenile" ;
+    sosa:observedProperty <http://linked.data.gov.au/def/tern-cv/abb0ee19-b2e8-42f3-8a25-d1f39ca3ebc3> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2011-03-29T13:00:00Z"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2011-03-29T13:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/occurrence-method> .
+
+ex:c045ecda-e35e-4bb1-8f58-ae6eaacad451 a tern:Observation ;
+    void:inDataset ex:7c2523fa-dc98-4700-8400-5eb09f5b890e ;
+    rdfs:comment "specimen taxonomic information" ;
+    prov:wasAssociatedWith [ a sdo:Person ;
+            void:inDataset ex:7c2523fa-dc98-4700-8400-5eb09f5b890e ;
+            sdo:name "Harvey, M.S." ] ;
+    sosa:hasFeatureOfInterest ex:e8f24b5b-f725-49ef-be8f-011271f6d1ba ;
+    sosa:hasResult _:N3e852c3bb58340c795dd21ffc424ab5e ;
+    sosa:hasSimpleResult _:N3e852c3bb58340c795dd21ffc424ab5e ;
+    sosa:observedProperty <http://linked.data.gov.au/def/tern-cv/70646576-6dc7-4bc5-a9d8-c4c366850df0> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2015-01-01T00:00:00"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2015-01-01T00:00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/specimen-method> .
+
+ex:c3a67e4d-4487-4c0e-98af-1f20511e0a7b a tern:Sampling ;
+    void:inDataset ex:ad92a331-4f40-4163-9140-0ece3900c296 ;
+    prov:wasAssociatedWith _:N9d3c2e1dcec7464690a407b6b7630a08 ;
+    sosa:hasFeatureOfInterest ex:7794d5f7-41d4-4db3-af01-0e0e1b7f6f4a ;
+    sosa:hasResult ex:012f8079-fa9c-44aa-9e42-0d73146c5156 ;
+    sosa:resultTime "2014-02-23T13:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure [ a sosa:Procedure ;
+            dcterms:description "wet (in ethanol or some other preservative)" ] .
+
+ex:cd69704b-f012-4fc5-973f-900ac32b7431 a tern:Observation ;
+    void:inDataset ex:d570563e-e82c-422d-b956-736fa19e5473 ;
+    rdfs:comment "habitat of the occurrence." ;
+    prov:wasAssociatedWith _:Ncb795b8bc97848c3b140468a6b3dbff7 ;
+    sosa:hasFeatureOfInterest ex:d218b04a-998c-4e40-aee3-f9aa2acc4b86 ;
+    sosa:hasResult [ a tern:Text ;
+            rdf:value "under rocks" ] ;
+    sosa:hasSimpleResult <file:///Users/uqechuc/projects/dwc-occ-records/records-2021-12-01/> ;
+    sosa:observedProperty <http://linked.data.gov.au/def/tern-cv/2090cfd9-8b6b-497b-9512-497456a18b99> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2006-09-04T00:00:00"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2006-09-04T00:00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/occurrence-method> .
+
+ex:d1f36f84-bf9f-422d-88a5-e385fa30ce49 a tern:Sampling ;
+    void:inDataset ex:d570563e-e82c-422d-b956-736fa19e5473 ;
+    geo:hasGeometry [ a geo:Point ;
+            geo:asWKT "POINT(119.196944 -21.138056)" ;
+            wgs:lat -2.113806e+01 ;
+            wgs:long 1.191969e+02 ;
+            tern-loc:coordinateUncertainty 5e+01 ] ;
+    geo:sfWithin <http://linked.data.gov.au/dataset/asgs2016/stateorterritory/5>,
+        <https://sws.geonames.org/2077456/> ;
+    rdfs:comment "Sulphur Springs, site SUSS 11" ;
+    prov:wasAssociatedWith _:Ncb795b8bc97848c3b140468a6b3dbff7 ;
+    sosa:hasFeatureOfInterest <http://linked.data.gov.au/dataset/asgs2016/stateorterritory/5> ;
+    sosa:hasResult ex:d218b04a-998c-4e40-aee3-f9aa2acc4b86 ;
+    sosa:resultTime "2006-09-04T00:00:00"^^xsd:dateTime ;
+    sosa:usedProcedure ex:occurrence-method .
+
+ex:d3ccecb4-6605-4649-8ded-ed809340070b a tern:Sampling ;
+    void:inDataset ex:52d0642f-34d6-412f-a09e-39f86dcff210 ;
+    prov:wasAssociatedWith _:N25934f2069894df6b3d6d722bce3249e ;
+    sosa:hasFeatureOfInterest ex:31cc5563-6e60-42b7-9d33-a1ba15ac07f4 ;
+    sosa:hasResult ex:37632c3a-600f-4894-a5c6-f56a2b5926c8 ;
+    sosa:resultTime "2006-09-04T00:00:00"^^xsd:dateTime ;
+    sosa:usedProcedure [ a sosa:Procedure ;
+            dcterms:description "wet (in ethanol or some other preservative)" ] .
+
+ex:d976e42d-19fb-40cd-9220-03fd4bccc0c4 a tern:Observation ;
+    void:inDataset ex:ad92a331-4f40-4163-9140-0ece3900c296 ;
+    rdfs:comment "specimen taxonomic information" ;
+    prov:wasAssociatedWith [ a sdo:Person ;
+            void:inDataset ex:ad92a331-4f40-4163-9140-0ece3900c296 ;
+            sdo:name "Harvey, M.S." ] ;
+    sosa:hasFeatureOfInterest ex:012f8079-fa9c-44aa-9e42-0d73146c5156 ;
+    sosa:hasResult _:N3876f813500e47b99bfba030c2e5d23d ;
+    sosa:hasSimpleResult _:N3876f813500e47b99bfba030c2e5d23d ;
+    sosa:observedProperty <http://linked.data.gov.au/def/tern-cv/70646576-6dc7-4bc5-a9d8-c4c366850df0> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2015-01-01T00:00:00"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2015-01-01T00:00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/specimen-method> .
+
+ex:db5dad30-4aee-423d-b673-ae9b700f8019 a tern:Observation ;
+    void:inDataset ex:52d0642f-34d6-412f-a09e-39f86dcff210 ;
+    rdfs:comment "specimen taxonomic information" ;
+    prov:wasAssociatedWith _:N0b067d102bd84974b63e598bdf43c480 ;
+    sosa:hasFeatureOfInterest ex:37632c3a-600f-4894-a5c6-f56a2b5926c8 ;
+    sosa:hasResult _:Nc539851c01a94392ae0dcb269d3d8603 ;
+    sosa:hasSimpleResult _:Nc539851c01a94392ae0dcb269d3d8603 ;
+    sosa:observedProperty <http://linked.data.gov.au/def/tern-cv/70646576-6dc7-4bc5-a9d8-c4c366850df0> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2015-01-01T00:00:00"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2015-01-01T00:00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/specimen-method> .
+
+ex:dc10fa98-df8f-41e7-96c3-db0623e2456a a tern:Observation ;
+    void:inDataset ex:d570563e-e82c-422d-b956-736fa19e5473 ;
+    rdfs:comment "speciment type status" ;
+    prov:wasAssociatedWith _:Nef408888de764da982d04834231e65e1 ;
+    sosa:hasFeatureOfInterest ex:01cedcc4-fba9-4d2f-aada-eedc3380718b ;
+    sosa:hasResult [ a tern:Text ;
+            rdf:value "PARATYPE" ] ;
+    sosa:hasSimpleResult <file:///Users/uqechuc/projects/dwc-occ-records/records-2021-12-01/PARATYPE> ;
+    sosa:observedProperty <http://linked.data.gov.au/def/bdr-cv/specimen-type-status> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2015-01-01T00:00:00"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2015-01-01T00:00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/specimen-method> .
+
+ex:dd710c6e-5cc8-40c1-92cd-1ee72124af90 a tern:Observation ;
+    void:inDataset ex:ad92a331-4f40-4163-9140-0ece3900c296 ;
+    rdfs:comment "life stage of the occurrence." ;
+    prov:wasAssociatedWith _:N9d3c2e1dcec7464690a407b6b7630a08 ;
+    sosa:hasFeatureOfInterest ex:7794d5f7-41d4-4db3-af01-0e0e1b7f6f4a ;
+    sosa:hasResult [ a tern:Text ;
+            rdf:value "Adult" ] ;
+    sosa:hasSimpleResult <file:///Users/uqechuc/projects/dwc-occ-records/records-2021-12-01/Adult> ;
+    sosa:observedProperty <http://linked.data.gov.au/def/tern-cv/abb0ee19-b2e8-42f3-8a25-d1f39ca3ebc3> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2014-02-23T13:00:00Z"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2014-02-23T13:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/occurrence-method> .
+
+ex:e30c10f3-7b8f-449b-8875-1dfe5c0cc489 a tern:Sampling ;
+    void:inDataset ex:d1e747f1-4ef0-4eb0-837f-418d78f62677 ;
+    prov:wasAssociatedWith _:N5928e9fc35a84421bbda12e166c7901e ;
+    sosa:hasFeatureOfInterest ex:bdf669d7-cb17-4ed5-8dfb-e3a110294745 ;
+    sosa:hasResult ex:929710dd-14bc-48f3-a0cc-67f80c60d4f1 ;
+    sosa:resultTime "2015-03-25T13:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure [ a sosa:Procedure ;
+            dcterms:description "wet (in ethanol or some other preservative)" ] .
+
+ex:f61647f5-b13f-4e35-b49d-4cf2e5bdae8c a tern:Observation ;
+    void:inDataset ex:d570563e-e82c-422d-b956-736fa19e5473 ;
+    rdfs:comment "life stage of the occurrence." ;
+    prov:wasAssociatedWith _:Ncb795b8bc97848c3b140468a6b3dbff7 ;
+    sosa:hasFeatureOfInterest ex:d218b04a-998c-4e40-aee3-f9aa2acc4b86 ;
+    sosa:hasResult [ a tern:Text ;
+            rdf:value "Adult" ] ;
+    sosa:hasSimpleResult <file:///Users/uqechuc/projects/dwc-occ-records/records-2021-12-01/Adult> ;
+    sosa:observedProperty <http://linked.data.gov.au/def/tern-cv/abb0ee19-b2e8-42f3-8a25-d1f39ca3ebc3> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2006-09-04T00:00:00"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2006-09-04T00:00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/occurrence-method> .
+
+ex:fe63ab2c-0f6a-4bcd-b766-3d4b1dd61529 a tern:Observation ;
+    void:inDataset ex:106537d8-9f75-4338-90fb-d8f1bc781b69 ;
+    rdfs:comment "habitat of the occurrence." ;
+    prov:wasAssociatedWith _:Na3f0e2d3c5d24ffc878ee0d60b5eca06 ;
+    sosa:hasFeatureOfInterest ex:007ef106-520e-45ed-89e5-046bdefa3430 ;
+    sosa:hasResult [ a tern:Text ;
+            rdf:value "gully" ] ;
+    sosa:hasSimpleResult <file:///Users/uqechuc/projects/dwc-occ-records/records-2021-12-01/gully> ;
+    sosa:observedProperty <http://linked.data.gov.au/def/tern-cv/2090cfd9-8b6b-497b-9512-497456a18b99> ;
+    sosa:phenomenonTime [ a tern:Instant ;
+            time:inXSDDateTimeStamp "2011-03-29T13:00:00Z"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2011-03-29T13:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/bdr-cv/occurrence-method> .
+
+ex:012f8079-fa9c-44aa-9e42-0d73146c5156 a tern:MaterialSample ;
+    void:inDataset ex:ad92a331-4f40-4163-9140-0ece3900c296 ;
     rdfs:comment "specimen" ;
-    sosa:isResultOf "https://example.com/79afed40-afa7-41d8-8e8c-110fa7551d21" ;
-    sosa:isSampleOf "https://example.com/393a0e6f-9d3c-4a56-8904-a4595d110299" ;
+    sosa:isResultOf "https://example.com/c3a67e4d-4487-4c0e-98af-1f20511e0a7b" ;
+    sosa:isSampleOf "https://example.com/7794d5f7-41d4-4db3-af01-0e0e1b7f6f4a" ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/cd5cbdbb-07d9-4a5b-9b11-5ab9d6015be6> .
 
-ex:393a0e6f-9d3c-4a56-8904-a4595d110299 a tern:Sample ;
-    dcterms:identifier "urn:lsid:taxonomy.org.au:ARACH:133719" ;
-    void:inDataset ex:17f8d14e-ed85-4ead-9a25-68e8bcb5e0fa ;
+ex:04390645-a64f-4a17-ac46-74b6d44e88a5 a tern:MaterialSample ;
+    void:inDataset ex:951bfe21-c529-453b-afd0-d2373d36213b ;
+    rdfs:comment "specimen" ;
+    sosa:isResultOf "https://example.com/b89f5088-5b9a-4f46-898e-7fad7d871cbd" ;
+    sosa:isSampleOf "https://example.com/47bc008f-0c7b-4a9f-affb-1be2ee3fe991" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/cd5cbdbb-07d9-4a5b-9b11-5ab9d6015be6> .
+
+ex:b8d1f1f3-d178-4373-bb4a-0860605ae8bf a tern:MaterialSample ;
+    void:inDataset ex:106537d8-9f75-4338-90fb-d8f1bc781b69 ;
+    rdfs:comment "specimen" ;
+    sosa:isResultOf "https://example.com/7c47aa6a-a828-473f-8ade-3c2de54cafbf" ;
+    sosa:isSampleOf "https://example.com/007ef106-520e-45ed-89e5-046bdefa3430" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/cd5cbdbb-07d9-4a5b-9b11-5ab9d6015be6> .
+
+ex:e8f24b5b-f725-49ef-be8f-011271f6d1ba a tern:MaterialSample ;
+    void:inDataset ex:7c2523fa-dc98-4700-8400-5eb09f5b890e ;
+    rdfs:comment "specimen" ;
+    sosa:isResultOf "https://example.com/8795b406-266d-4913-8fd6-865c95df016b" ;
+    sosa:isSampleOf "https://example.com/2a96c1b5-c529-40c7-8317-9c17e4664839" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/cd5cbdbb-07d9-4a5b-9b11-5ab9d6015be6> .
+
+ex:01cedcc4-fba9-4d2f-aada-eedc3380718b a tern:MaterialSample ;
+    void:inDataset ex:d570563e-e82c-422d-b956-736fa19e5473 ;
+    rdfs:comment "specimen" ;
+    sosa:isResultOf "https://example.com/414cf030-18f6-4973-9d03-00e0ad066558" ;
+    sosa:isSampleOf "https://example.com/d218b04a-998c-4e40-aee3-f9aa2acc4b86" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/cd5cbdbb-07d9-4a5b-9b11-5ab9d6015be6> .
+
+ex:37632c3a-600f-4894-a5c6-f56a2b5926c8 a tern:MaterialSample ;
+    void:inDataset ex:52d0642f-34d6-412f-a09e-39f86dcff210 ;
+    rdfs:comment "specimen" ;
+    sosa:isResultOf "https://example.com/d3ccecb4-6605-4649-8ded-ed809340070b" ;
+    sosa:isSampleOf "https://example.com/31cc5563-6e60-42b7-9d33-a1ba15ac07f4" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/cd5cbdbb-07d9-4a5b-9b11-5ab9d6015be6> .
+
+ex:4fd877d1-b116-4974-8e5c-acb013fd525f a tern:MaterialSample ;
+    void:inDataset ex:dbe6536b-29f9-431b-980c-93ba55f0e982 ;
+    rdfs:comment "specimen" ;
+    sosa:isResultOf "https://example.com/254d6e80-1557-494f-a7b7-3bda8f367964" ;
+    sosa:isSampleOf "https://example.com/ebcef19d-187c-4351-a5bc-0915b236fdea" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/cd5cbdbb-07d9-4a5b-9b11-5ab9d6015be6> .
+
+ex:929710dd-14bc-48f3-a0cc-67f80c60d4f1 a tern:MaterialSample ;
+    void:inDataset ex:d1e747f1-4ef0-4eb0-837f-418d78f62677 ;
+    rdfs:comment "specimen" ;
+    sosa:isResultOf "https://example.com/e30c10f3-7b8f-449b-8875-1dfe5c0cc489" ;
+    sosa:isSampleOf "https://example.com/bdf669d7-cb17-4ed5-8dfb-e3a110294745" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/cd5cbdbb-07d9-4a5b-9b11-5ab9d6015be6> .
+
+ex:47bc008f-0c7b-4a9f-affb-1be2ee3fe991 a tern:Sample ;
+    dcterms:identifier "urn:lsid:taxonomy.org.au:ARACH:113773" ;
+    void:inDataset ex:951bfe21-c529-453b-afd0-d2373d36213b ;
     rdfs:comment "occurrence" ;
-    sosa:isResultOf "https://example.com/92dda1e7-c05b-4749-a7a5-fbe753abf1dc" ;
+    sosa:isResultOf "https://example.com/83921018-c6e6-47f8-a20b-212c63175e5a" ;
     sosa:isSampleOf "http://linked.data.gov.au/dataset/asgs2016/stateorterritory/5" ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/2361dea8-598c-4b6f-a641-2b98ff199e9e> .
 
-ex:17f8d14e-ed85-4ead-9a25-68e8bcb5e0fa a tern:RDFDataset ;
+ex:ebcef19d-187c-4351-a5bc-0915b236fdea a tern:Sample ;
+    dcterms:identifier "urn:lsid:taxonomy.org.au:ARACH:135732" ;
+    void:inDataset ex:dbe6536b-29f9-431b-980c-93ba55f0e982 ;
+    rdfs:comment "occurrence" ;
+    sosa:isResultOf "https://example.com/7768d308-adf8-48c3-91b5-ea57ba72dbab" ;
+    sosa:isSampleOf "http://linked.data.gov.au/dataset/asgs2016/stateorterritory/5" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/2361dea8-598c-4b6f-a641-2b98ff199e9e> .
+
+ex:007ef106-520e-45ed-89e5-046bdefa3430 a tern:Sample ;
+    dcterms:identifier "urn:lsid:taxonomy.org.au:ARACH:113769" ;
+    void:inDataset ex:106537d8-9f75-4338-90fb-d8f1bc781b69 ;
+    rdfs:comment "occurrence" ;
+    sosa:isResultOf "https://example.com/51ea5bd8-5e79-4394-b228-e1723c4bb5a1" ;
+    sosa:isSampleOf "http://linked.data.gov.au/dataset/asgs2016/stateorterritory/5" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/2361dea8-598c-4b6f-a641-2b98ff199e9e> .
+
+ex:2a96c1b5-c529-40c7-8317-9c17e4664839 a tern:Sample ;
+    dcterms:identifier "urn:lsid:taxonomy.org.au:ARACH:113774" ;
+    void:inDataset ex:7c2523fa-dc98-4700-8400-5eb09f5b890e ;
+    rdfs:comment "occurrence" ;
+    sosa:isResultOf "https://example.com/8682ccf5-010c-479f-8d95-5e77e99a0ca4" ;
+    sosa:isSampleOf "http://linked.data.gov.au/dataset/asgs2016/stateorterritory/5" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/2361dea8-598c-4b6f-a641-2b98ff199e9e> .
+
+ex:31cc5563-6e60-42b7-9d33-a1ba15ac07f4 a tern:Sample ;
+    dcterms:identifier "urn:lsid:taxonomy.org.au:ARACH:63963" ;
+    void:inDataset ex:52d0642f-34d6-412f-a09e-39f86dcff210 ;
+    rdfs:comment "occurrence" ;
+    sosa:isResultOf "https://example.com/8babea83-618b-4c2c-bcf4-1558280a7555" ;
+    sosa:isSampleOf "http://linked.data.gov.au/dataset/asgs2016/stateorterritory/5" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/2361dea8-598c-4b6f-a641-2b98ff199e9e> .
+
+ex:7794d5f7-41d4-4db3-af01-0e0e1b7f6f4a a tern:Sample ;
+    dcterms:identifier "urn:lsid:taxonomy.org.au:ARACH:133719" ;
+    void:inDataset ex:ad92a331-4f40-4163-9140-0ece3900c296 ;
+    rdfs:comment "occurrence" ;
+    sosa:isResultOf "https://example.com/95412663-351f-4e75-b0a9-537c4a60ef10" ;
+    sosa:isSampleOf "http://linked.data.gov.au/dataset/asgs2016/stateorterritory/5" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/2361dea8-598c-4b6f-a641-2b98ff199e9e> .
+
+ex:bdf669d7-cb17-4ed5-8dfb-e3a110294745 a tern:Sample ;
+    dcterms:identifier "urn:lsid:taxonomy.org.au:ARACH:135841" ;
+    void:inDataset ex:d1e747f1-4ef0-4eb0-837f-418d78f62677 ;
+    rdfs:comment "occurrence" ;
+    sosa:isResultOf "https://example.com/b3336103-55f5-4716-96d0-0ecdfe52b65e" ;
+    sosa:isSampleOf "http://linked.data.gov.au/dataset/asgs2016/stateorterritory/5" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/2361dea8-598c-4b6f-a641-2b98ff199e9e> .
+
+ex:d218b04a-998c-4e40-aee3-f9aa2acc4b86 a tern:Sample ;
+    dcterms:identifier "urn:lsid:taxonomy.org.au:ARACH:78157" ;
+    void:inDataset ex:d570563e-e82c-422d-b956-736fa19e5473 ;
+    rdfs:comment "occurrence" ;
+    sosa:isResultOf "https://example.com/d1f36f84-bf9f-422d-88a5-e385fa30ce49" ;
+    sosa:isSampleOf "http://linked.data.gov.au/dataset/asgs2016/stateorterritory/5" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/2361dea8-598c-4b6f-a641-2b98ff199e9e> .
+
+ex:951bfe21-c529-453b-afd0-d2373d36213b a tern:RDFDataset ;
+    dcterms:identifier "113773" ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:rightsHolder <https://museum.wa.gov.au/> ;
+    dcterms:source <https://doi.org/10.26197/ala.26fdc11f-107e-45fa-9aab-3aead9083137> ;
+    dcterms:subject "https://linked.data.gov.au/def/bdr-cv/ARACH" ;
+    rdfs:comment "Equivalent to dwc:Record." ;
+    tern:hasAttribute [ a tern:Attribute ;
+            tern:attribute "https://linked.data.gov.au/def/bdr-cv/provenance" ;
+            tern:hasSimpleValue "Published dataset" ;
+            tern:hasValue [ a tern:Text ;
+                    rdf:value "Published dataset" ] ],
+        [ a tern:Attribute ;
+            tern:attribute "https://linked.data.gov.au/def/bdr-cv/country-code" ;
+            tern:hasSimpleValue "AU" ;
+            tern:hasValue [ a tern:Text ;
+                    rdf:value "AU" ] ] .
+
+ex:106537d8-9f75-4338-90fb-d8f1bc781b69 a tern:RDFDataset ;
+    dcterms:identifier "113769" ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:rightsHolder <https://museum.wa.gov.au/> ;
+    dcterms:source <https://doi.org/10.26197/ala.26fdc11f-107e-45fa-9aab-3aead9083137> ;
+    dcterms:subject "https://linked.data.gov.au/def/bdr-cv/ARACH" ;
+    rdfs:comment "Equivalent to dwc:Record." ;
+    tern:hasAttribute [ a tern:Attribute ;
+            tern:attribute "https://linked.data.gov.au/def/bdr-cv/provenance" ;
+            tern:hasSimpleValue "Published dataset" ;
+            tern:hasValue [ a tern:Text ;
+                    rdf:value "Published dataset" ] ],
+        [ a tern:Attribute ;
+            tern:attribute "https://linked.data.gov.au/def/bdr-cv/country-code" ;
+            tern:hasSimpleValue "AU" ;
+            tern:hasValue [ a tern:Text ;
+                    rdf:value "AU" ] ] .
+
+ex:7c2523fa-dc98-4700-8400-5eb09f5b890e a tern:RDFDataset ;
+    dcterms:identifier "113774" ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:rightsHolder <https://museum.wa.gov.au/> ;
+    dcterms:source <https://doi.org/10.26197/ala.26fdc11f-107e-45fa-9aab-3aead9083137> ;
+    dcterms:subject "https://linked.data.gov.au/def/bdr-cv/ARACH" ;
+    rdfs:comment "Equivalent to dwc:Record." ;
+    tern:hasAttribute [ a tern:Attribute ;
+            tern:attribute "https://linked.data.gov.au/def/bdr-cv/country-code" ;
+            tern:hasSimpleValue "AU" ;
+            tern:hasValue [ a tern:Text ;
+                    rdf:value "AU" ] ],
+        [ a tern:Attribute ;
+            tern:attribute "https://linked.data.gov.au/def/bdr-cv/provenance" ;
+            tern:hasSimpleValue "Published dataset" ;
+            tern:hasValue [ a tern:Text ;
+                    rdf:value "Published dataset" ] ] .
+
+ex:ad92a331-4f40-4163-9140-0ece3900c296 a tern:RDFDataset ;
     dcterms:identifier "133719" ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:rightsHolder <https://museum.wa.gov.au/> ;
@@ -103,4 +890,244 @@ ex:17f8d14e-ed85-4ead-9a25-68e8bcb5e0fa a tern:RDFDataset ;
             tern:hasSimpleValue "AU" ;
             tern:hasValue [ a tern:Text ;
                     rdf:value "AU" ] ] .
+
+ex:dbe6536b-29f9-431b-980c-93ba55f0e982 a tern:RDFDataset ;
+    dcterms:identifier "135732" ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:rightsHolder <https://museum.wa.gov.au/> ;
+    dcterms:source <https://doi.org/10.26197/ala.26fdc11f-107e-45fa-9aab-3aead9083137> ;
+    dcterms:subject "https://linked.data.gov.au/def/bdr-cv/ARACH" ;
+    rdfs:comment "Equivalent to dwc:Record." ;
+    tern:hasAttribute [ a tern:Attribute ;
+            tern:attribute "https://linked.data.gov.au/def/bdr-cv/country-code" ;
+            tern:hasSimpleValue "AU" ;
+            tern:hasValue [ a tern:Text ;
+                    rdf:value "AU" ] ],
+        [ a tern:Attribute ;
+            tern:attribute "https://linked.data.gov.au/def/bdr-cv/provenance" ;
+            tern:hasSimpleValue "Published dataset" ;
+            tern:hasValue [ a tern:Text ;
+                    rdf:value "Published dataset" ] ] .
+
+ex:52d0642f-34d6-412f-a09e-39f86dcff210 a tern:RDFDataset ;
+    dcterms:identifier "63963" ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:rightsHolder <https://museum.wa.gov.au/> ;
+    dcterms:source <https://doi.org/10.26197/ala.26fdc11f-107e-45fa-9aab-3aead9083137> ;
+    dcterms:subject "https://linked.data.gov.au/def/bdr-cv/ARACH" ;
+    rdfs:comment "Equivalent to dwc:Record." ;
+    tern:hasAttribute [ a tern:Attribute ;
+            tern:attribute "https://linked.data.gov.au/def/bdr-cv/country-code" ;
+            tern:hasSimpleValue "AU" ;
+            tern:hasValue [ a tern:Text ;
+                    rdf:value "AU" ] ],
+        [ a tern:Attribute ;
+            tern:attribute "https://linked.data.gov.au/def/bdr-cv/provenance" ;
+            tern:hasSimpleValue "Published dataset" ;
+            tern:hasValue [ a tern:Text ;
+                    rdf:value "Published dataset" ] ] .
+
+ex:d1e747f1-4ef0-4eb0-837f-418d78f62677 a tern:RDFDataset ;
+    dcterms:identifier "135841" ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:rightsHolder <https://museum.wa.gov.au/> ;
+    dcterms:source <https://doi.org/10.26197/ala.26fdc11f-107e-45fa-9aab-3aead9083137> ;
+    dcterms:subject "https://linked.data.gov.au/def/bdr-cv/ARACH" ;
+    rdfs:comment "Equivalent to dwc:Record." ;
+    tern:hasAttribute [ a tern:Attribute ;
+            tern:attribute "https://linked.data.gov.au/def/bdr-cv/provenance" ;
+            tern:hasSimpleValue "Published dataset" ;
+            tern:hasValue [ a tern:Text ;
+                    rdf:value "Published dataset" ] ],
+        [ a tern:Attribute ;
+            tern:attribute "https://linked.data.gov.au/def/bdr-cv/country-code" ;
+            tern:hasSimpleValue "AU" ;
+            tern:hasValue [ a tern:Text ;
+                    rdf:value "AU" ] ] .
+
+ex:d570563e-e82c-422d-b956-736fa19e5473 a tern:RDFDataset ;
+    dcterms:identifier "78157" ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:rightsHolder <https://museum.wa.gov.au/> ;
+    dcterms:source <https://doi.org/10.26197/ala.26fdc11f-107e-45fa-9aab-3aead9083137> ;
+    dcterms:subject "https://linked.data.gov.au/def/bdr-cv/ARACH" ;
+    rdfs:comment "Equivalent to dwc:Record." ;
+    tern:hasAttribute [ a tern:Attribute ;
+            tern:attribute "https://linked.data.gov.au/def/bdr-cv/country-code" ;
+            tern:hasSimpleValue "AU" ;
+            tern:hasValue [ a tern:Text ;
+                    rdf:value "AU" ] ],
+        [ a tern:Attribute ;
+            tern:attribute "https://linked.data.gov.au/def/bdr-cv/provenance" ;
+            tern:hasSimpleValue "Published dataset" ;
+            tern:hasValue [ a tern:Text ;
+                    rdf:value "Published dataset" ] ] .
+
+_:N0b067d102bd84974b63e598bdf43c480 a sdo:Person ;
+    void:inDataset ex:52d0642f-34d6-412f-a09e-39f86dcff210 ;
+    sdo:name "Harvey, M.S." .
+
+_:N3876f813500e47b99bfba030c2e5d23d a tern:Taxon ;
+    void:inDataset ex:ad92a331-4f40-4163-9140-0ece3900c296 ;
+    dwc:class "Arachnida" ;
+    dwc:family "Feaellidae" ;
+    dwc:genus "Feaella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Pseudoscorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:scientificName "Feaella (Tetrafeaella) tealei" ;
+    dwc:scientificNameAuthorship "Harvey, Abrams, Beavis, Hillyer & Huey, 2016" ;
+    dwc:species "Feaella tealei" ;
+    dwc:specificEpithet "tealei" ;
+    dwc:taxonConceptID <urn:lsid:biodiversity.org.au:afd.taxon:263dc3d1-6541-4f01-bd8c-31a9760b723c> ;
+    dwc:taxonRank "species" .
+
+_:N3a1e66e3eaca4237a72ed82fd4c7d12f a sdo:Person ;
+    void:inDataset ex:dbe6536b-29f9-431b-980c-93ba55f0e982 ;
+    sdo:name "Harvey, M.S." .
+
+_:N3e852c3bb58340c795dd21ffc424ab5e a tern:Taxon ;
+    void:inDataset ex:7c2523fa-dc98-4700-8400-5eb09f5b890e ;
+    dwc:class "Arachnida" ;
+    dwc:family "Feaellidae" ;
+    dwc:genus "Feaella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Pseudoscorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:scientificName "Feaella (Tetrafeaella) tealei" ;
+    dwc:scientificNameAuthorship "Harvey, Abrams, Beavis, Hillyer & Huey, 2016" ;
+    dwc:species "Feaella tealei" ;
+    dwc:specificEpithet "tealei" ;
+    dwc:taxonConceptID <urn:lsid:biodiversity.org.au:afd.taxon:263dc3d1-6541-4f01-bd8c-31a9760b723c> ;
+    dwc:taxonRank "species" .
+
+_:N57c122255858427e95774d6853736de3 a tern:Taxon ;
+    void:inDataset ex:dbe6536b-29f9-431b-980c-93ba55f0e982 ;
+    dwc:class "Arachnida" ;
+    dwc:family "Feaellidae" ;
+    dwc:genus "Feaella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Pseudoscorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:scientificName "Feaella (Tetrafeaella) linetteae" ;
+    dwc:scientificNameAuthorship "Harvey, Abrams, Beavis, Hillyer & Huey, 2016" ;
+    dwc:species "Feaella linetteae" ;
+    dwc:specificEpithet "linetteae" ;
+    dwc:taxonConceptID <urn:lsid:biodiversity.org.au:afd.taxon:8d2bffe6-d564-4114-9453-525fa1f0ff8b> ;
+    dwc:taxonRank "species" .
+
+_:N8ab537193fea4a74be40b964f6afae59 a tern:Taxon ;
+    void:inDataset ex:951bfe21-c529-453b-afd0-d2373d36213b ;
+    dwc:class "Arachnida" ;
+    dwc:family "Feaellidae" ;
+    dwc:genus "Feaella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Pseudoscorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:scientificName "Feaella (Tetrafeaella) tealei" ;
+    dwc:scientificNameAuthorship "Harvey, Abrams, Beavis, Hillyer & Huey, 2016" ;
+    dwc:species "Feaella tealei" ;
+    dwc:specificEpithet "tealei" ;
+    dwc:taxonConceptID <urn:lsid:biodiversity.org.au:afd.taxon:263dc3d1-6541-4f01-bd8c-31a9760b723c> ;
+    dwc:taxonRank "species" .
+
+_:Na591956120c746489c8547fabc1640c8 a tern:Taxon ;
+    void:inDataset ex:106537d8-9f75-4338-90fb-d8f1bc781b69 ;
+    dwc:class "Arachnida" ;
+    dwc:family "Feaellidae" ;
+    dwc:genus "Feaella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Pseudoscorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:scientificName "Feaella (Tetrafeaella) tealei" ;
+    dwc:scientificNameAuthorship "Harvey, Abrams, Beavis, Hillyer & Huey, 2016" ;
+    dwc:species "Feaella tealei" ;
+    dwc:specificEpithet "tealei" ;
+    dwc:taxonConceptID <urn:lsid:biodiversity.org.au:afd.taxon:263dc3d1-6541-4f01-bd8c-31a9760b723c> ;
+    dwc:taxonRank "species" .
+
+_:Nba8d89d0ac394825aea9930324a0f5c0 a sdo:Person ;
+    void:inDataset ex:d1e747f1-4ef0-4eb0-837f-418d78f62677 ;
+    sdo:name "Harvey, M.S." .
+
+_:Nc4be5c4033124b6c8fec2d6762511225 a tern:Taxon ;
+    void:inDataset ex:d570563e-e82c-422d-b956-736fa19e5473 ;
+    dwc:class "Arachnida" ;
+    dwc:family "Feaellidae" ;
+    dwc:genus "Feaella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Pseudoscorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:scientificName "Feaella (Tetrafeaella) tealei" ;
+    dwc:scientificNameAuthorship "Harvey, Abrams, Beavis, Hillyer & Huey, 2016" ;
+    dwc:species "Feaella tealei" ;
+    dwc:specificEpithet "tealei" ;
+    dwc:taxonConceptID <urn:lsid:biodiversity.org.au:afd.taxon:263dc3d1-6541-4f01-bd8c-31a9760b723c> ;
+    dwc:taxonRank "species" .
+
+_:Nc539851c01a94392ae0dcb269d3d8603 a tern:Taxon ;
+    void:inDataset ex:52d0642f-34d6-412f-a09e-39f86dcff210 ;
+    dwc:class "Arachnida" ;
+    dwc:family "Feaellidae" ;
+    dwc:genus "Feaella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Pseudoscorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:scientificName "Feaella (Tetrafeaella) tealei" ;
+    dwc:scientificNameAuthorship "Harvey, Abrams, Beavis, Hillyer & Huey, 2016" ;
+    dwc:species "Feaella tealei" ;
+    dwc:specificEpithet "tealei" ;
+    dwc:taxonConceptID <urn:lsid:biodiversity.org.au:afd.taxon:263dc3d1-6541-4f01-bd8c-31a9760b723c> ;
+    dwc:taxonRank "species" .
+
+_:Ndc865ea492a145889251ce857d8f7819 a tern:Taxon ;
+    void:inDataset ex:d1e747f1-4ef0-4eb0-837f-418d78f62677 ;
+    dwc:class "Arachnida" ;
+    dwc:family "Feaellidae" ;
+    dwc:genus "Feaella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Pseudoscorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:scientificName "Feaella (Tetrafeaella) linetteae" ;
+    dwc:scientificNameAuthorship "Harvey, Abrams, Beavis, Hillyer & Huey, 2016" ;
+    dwc:species "Feaella linetteae" ;
+    dwc:specificEpithet "linetteae" ;
+    dwc:taxonConceptID <urn:lsid:biodiversity.org.au:afd.taxon:8d2bffe6-d564-4114-9453-525fa1f0ff8b> ;
+    dwc:taxonRank "species" .
+
+_:Nef408888de764da982d04834231e65e1 a sdo:Person ;
+    void:inDataset ex:d570563e-e82c-422d-b956-736fa19e5473 ;
+    sdo:name "Harvey, M.S." .
+
+_:N21a116f8303f4f0d98310162fd7fbbc0 a sdo:Person ;
+    void:inDataset ex:dbe6536b-29f9-431b-980c-93ba55f0e982 ;
+    sdo:name "Umbrello, L." .
+
+_:Ndba893e51d154a229ad5e8a3c07c2804 a sdo:Person ;
+    void:inDataset ex:951bfe21-c529-453b-afd0-d2373d36213b ;
+    sdo:name "Slabber, A." .
+
+_:N25934f2069894df6b3d6d722bce3249e a sdo:Person ;
+    void:inDataset ex:52d0642f-34d6-412f-a09e-39f86dcff210 ;
+    sdo:name "Teale, R." .
+
+_:N5928e9fc35a84421bbda12e166c7901e a sdo:Person ;
+    void:inDataset ex:d1e747f1-4ef0-4eb0-837f-418d78f62677 ;
+    sdo:name "Huey, J." .
+
+_:N98746182b29e4608a5274c2c6c5ff985 a sdo:Person ;
+    void:inDataset ex:7c2523fa-dc98-4700-8400-5eb09f5b890e ;
+    sdo:name "Slabber, A." .
+
+_:N9d3c2e1dcec7464690a407b6b7630a08 a sdo:Person ;
+    void:inDataset ex:ad92a331-4f40-4163-9140-0ece3900c296 ;
+    sdo:name "Parsons, B." .
+
+_:Na3f0e2d3c5d24ffc878ee0d60b5eca06 a sdo:Person ;
+    void:inDataset ex:106537d8-9f75-4338-90fb-d8f1bc781b69 ;
+    sdo:name "Slabber, A." .
+
+_:Ncb795b8bc97848c3b140468a6b3dbff7 a sdo:Person ;
+    void:inDataset ex:d570563e-e82c-422d-b956-736fa19e5473 ;
+    sdo:name "Teale, R." .
 

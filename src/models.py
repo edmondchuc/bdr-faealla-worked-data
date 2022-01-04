@@ -19,6 +19,22 @@ class Value(Base):
     type: str = Field(TERN.Value, alias="@type")
 
 
+class Taxon(Value):
+    type: str = Field(TERN.Taxon, alias="@type")
+    taxon_concept_id: str = Field(alias=DWC.taxonConceptID)
+    scientific_name: str = Field(alias=DWC.scientificName)
+    kingdom: str = Field(alias=DWC.kingdom)
+    phylum: str = Field(alias=DWC.phylum)
+    class_: str = Field(alias=DWC["class"])
+    order: str = Field(alias=DWC.order)
+    family: str = Field(alias=DWC.family)
+    genus: str = Field(alias=DWC.genus)
+    specific_epithet: str = Field(alias=DWC.specificEpithet)
+    taxon_rank: str = Field(alias=DWC.taxonRank)
+    scientific_name_authorship: str = Field(alias=DWC.scientificNameAuthorship)
+    species: str = Field(alias=DWC.species)
+
+
 class Text(Value):
     type: str = Field(TERN.Text, alias="@type")
     value: str = Field(alias=RDF.value)
@@ -99,7 +115,7 @@ class TimeInstant(Base):
 class Observation(Activity):
     type: str = Field(TERN.Observation, alias="@type")
     has_result: Value = Field(alias=SOSA.hasResult)
-    has_simple_result: str = Field(alias=TERN.hasSimpleResult)
+    has_simple_result: str = Field(alias=SOSA.hasSimpleResult)
     observed_property: str = Field(alias=SOSA.observedProperty)
     phenomenon_time: TimeInstant = Field(alias=SOSA.phenomenonTime)
 
@@ -126,3 +142,5 @@ Sampling.update_forward_refs()
 Sample.update_forward_refs()
 MaterialSample.update_forward_refs()
 Observation.update_forward_refs()
+Taxon.update_forward_refs()
+Person.update_forward_refs()

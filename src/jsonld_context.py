@@ -1,6 +1,6 @@
 from rdflib import XSD, SOSA, DCTERMS, TIME
 
-from src.namespaces import TERN_LOC, WGS, GEO, TERN
+from src.namespaces import TERN_LOC, WGS, GEO, TERN, DWC
 
 
 jsonld_context = {
@@ -20,5 +20,6 @@ jsonld_context = {
         DCTERMS.rightsHolder: {"@type": "@id"},
         TIME.inXSDDateTimeStamp: {"@type": XSD.dateTimeStamp},
         SOSA.observedProperty: {"@type": "@id"},
+        DWC.taxonConceptID: {"@type": "@id"},
     }
 }

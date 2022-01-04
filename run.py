@@ -3,7 +3,7 @@ from uuid import uuid4
 from datetime import datetime
 
 import pandas as pd
-from rdflib import BNode
+from rdflib import BNode, SOSA
 
 from src import value, create_uriref, insert_data
 from src.graph import create_graph
@@ -20,10 +20,11 @@ from src.models import (
     Text,
     Observation,
     TimeInstant,
+    Taxon,
 )
 from src.namespaces import EX, BDR_CV
 
-transform_single_record = True
+transform_single_record = False
 
 g = create_graph()
 
@@ -39,7 +40,7 @@ class StateOrTerritory(Enum):
 for i, row in df.iterrows():
 
     # If debug is on, only process the data in the third row.
-    if transform_single_record and i != 2:
+    if transform_single_record and i != 1:
         continue
 
     ### RDFDataset (Record)
@@ -105,6 +106,10 @@ for i, row in df.iterrows():
         in_dataset=record,
     )
 
+    recorded_by = Person(
+        id=BNode().n3(), name=value(row["recordedBy"]), in_dataset=record
+    )
+
     occurrence_sampling = Sampling(
         id=occurrence_sampling_id,
         identifier=value(row["fieldNumber"]),
@@ -119,7 +124,7 @@ for i, row in df.iterrows():
         ],
         result_time=occurrence_sampling_datetime,
         comment=value(row["locationRemarks"]),
-        was_associated_with=Person(id=BNode().n3(), name=value(row["recordedBy"])),
+        was_associated_with=recorded_by,
         has_result=occurrence,
         used_procedure=EX["occurrence-method"],
         in_dataset=record,
@@ -146,7 +151,7 @@ for i, row in df.iterrows():
             id=BNode().n3(), description=value(row["preparations"])
         ),
         result_time=occurrence_sampling_datetime,
-        was_associated_with=Person(id=BNode().n3(), name=value(row["recordedBy"])),
+        was_associated_with=recorded_by,
         has_result=specimen,
         has_feature_of_interest=occurrence,
         in_dataset=record,
@@ -161,7 +166,7 @@ for i, row in df.iterrows():
             id=EX[str(uuid4())],
             comment="Sex of the occurrence.",
             in_dataset=record,
-            was_associated_with=Person(id=BNode().n3(), name=value(row["recordedBy"])),
+            was_associated_with=recorded_by,
             has_feature_of_interest=occurrence,
             has_simple_result=value(row["sex"]),
             has_result=Text(id=BNode().n3(), value=value(row["sex"])),
@@ -179,7 +184,7 @@ for i, row in df.iterrows():
         id=EX[str(uuid4())],
         comment="life stage of the occurrence.",
         in_dataset=record,
-        was_associated_with=Person(id=BNode().n3(), name=value(row["recordedBy"])),
+        was_associated_with=recorded_by,
         has_feature_of_interest=occurrence,
         has_simple_result=value(row["lifeStage"]),
         has_result=Text(id=BNode().n3(), value=value(row["lifeStage"])),
@@ -197,7 +202,7 @@ for i, row in df.iterrows():
         id=EX[str(uuid4())],
         comment="habitat of the occurrence.",
         in_dataset=record,
-        was_associated_with=Person(id=BNode().n3(), name=value(row["recordedBy"])),
+        was_associated_with=recorded_by,
         has_feature_of_interest=occurrence,
         has_simple_result=value(row["habitat"]),
         has_result=Text(id=BNode().n3(), value=value(row["habitat"])),
@@ -209,11 +214,83 @@ for i, row in df.iterrows():
         used_procedure=BDR_CV["occurrence-method"],
     )
 
+    insert_data({**jsonld_context, **habitat_observation.dict(by_alias=True)}, g)
+
     ### End of occurrence observations
 
     ### Specimen observations
 
-    # TODO:
+    identified_by = Person(
+        id=BNode().n3(), name=value(row["identifiedBy"]), in_dataset=record
+    )
+
+    if value(row["typeStatus"]):
+        specimen_type_status_observation = Observation(
+            id=EX[str(uuid4())],
+            comment="speciment type status",
+            in_dataset=record,
+            was_associated_with=identified_by,
+            has_feature_of_interest=specimen,
+            has_simple_result=value(row["typeStatus"]),
+            has_result=Text(id=BNode().n3(), value=value(row["typeStatus"])),
+            observed_property="http://linked.data.gov.au/def/bdr-cv/specimen-type-status",
+            phenomenon_time=TimeInstant(
+                id=BNode().n3(),
+                date_timestamp=datetime.fromisoformat(
+                    f"{value(row['dateIdentified'])}-01-01"
+                ).isoformat(),
+            ),
+            result_time=datetime.fromisoformat(
+                f"{value(row['dateIdentified'])}-01-01"
+            ).isoformat(),
+            used_procedure=BDR_CV["specimen-method"],
+        )
+
+        insert_data(
+            {**jsonld_context, **specimen_type_status_observation.dict(by_alias=True)},
+            g,
+        )
+
+    specimen_taxon_result_id = BNode().n3()
+    specimen_observation = Observation(
+        id=EX[str(uuid4())],
+        comment="specimen taxonomic information",
+        in_dataset=record,
+        was_associated_with=identified_by,
+        has_feature_of_interest=specimen,
+        has_simple_result=specimen_taxon_result_id,
+        has_result=Taxon(
+            id=specimen_taxon_result_id,
+            in_dataset=record,
+            taxon_concept_id=value(row["taxonConceptID"]),
+            scientific_name=value(row["scientificName"]),
+            kingdom=value(row["kingdom"]),
+            phylum=value(row["phylum"]),
+            class_=value(row["class"]),
+            order=value(row["order"]),
+            family=value(row["family"]),
+            genus=value(row["genus"]),
+            specific_epithet=value(row["specificEpithet"]),
+            taxon_rank=value(row["taxonRank"]),
+            scientific_name_authorship=value(row["scientificNameAuthorship"]),
+            species=value(row["species"]),
+        ),
+        observed_property="http://linked.data.gov.au/def/tern-cv/70646576-6dc7-4bc5-a9d8-c4c366850df0",
+        phenomenon_time=TimeInstant(
+            id=BNode().n3(),
+            date_timestamp=datetime.fromisoformat(
+                f"{value(row['dateIdentified'])}-01-01"
+            ).isoformat(),
+        ),
+        result_time=datetime.fromisoformat(
+            f"{value(row['dateIdentified'])}-01-01"
+        ).isoformat(),
+        used_procedure=BDR_CV["specimen-method"],
+    )
+
+    new_jsonld_context = {**jsonld_context}
+    new_jsonld_context["@context"][SOSA.hasSimpleResult] = {"@type": "@id"}
+    insert_data({**new_jsonld_context, **specimen_observation.dict(by_alias=True)}, g)
 
     ### End of specimen observations
 
