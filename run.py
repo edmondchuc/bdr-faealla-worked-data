@@ -17,10 +17,12 @@ from src.models import (
     Person,
     Sample,
     Attribute,
+    SiteVisit,
     Text,
     Observation,
     TimeInstant,
     Taxon,
+    Site,
 )
 from src.namespaces import EX, BDR_CV
 
@@ -72,17 +74,8 @@ for i, row in df.iterrows():
 
     ### End RDFDataset (Record)
 
-    ### Occurrence sampling
-
-    occurrence_sampling_point = Point(
-        id=BNode().n3(),
-        lat=value(row["decimalLatitude"]),
-        long=value(row["decimalLongitude"]),
-        as_wkt=f"POINT({value(row['decimalLongitude'])} {value(row['decimalLatitude'])})",
-        elevation=str(value(row["verbatimElevation"])).replace(" ", "").replace("m", "")
-        if value(row["verbatimElevation"])
-        else None,
-        coordinate_uncertainty=value(row["coordinateUncertaintyInMeters"]),
+    recorded_by = Person(
+        id=BNode().n3(), name=value(row["recordedBy"]), in_dataset=record
     )
 
     event_date = value(row["eventDate"])
@@ -94,30 +87,78 @@ for i, row in df.iterrows():
             f"{verbatim_event_date[2]}-{verbatim_event_date[1]}-{verbatim_event_date[0]}"
         ).isoformat()
 
+    ### Site
+
+    site_establishment_uri = EX[str(uuid4())]
+    site_uri = EX[str(uuid4())]
+
+    site_point = Point(
+        id=BNode().n3(),
+        lat=value(row["decimalLatitude"]),
+        long=value(row["decimalLongitude"]),
+        as_wkt=f"POINT({value(row['decimalLongitude'])} {value(row['decimalLatitude'])})",
+        elevation=str(value(row["verbatimElevation"])).replace(" ", "").replace("m", "")
+        if value(row["verbatimElevation"])
+        else None,
+        has_metric_spatial_accuracy=value(row["coordinateUncertaintyInMeters"]),
+    )
+
+    site = Site(
+        id=site_uri,
+        feature_type="http://linked.data.gov.au/def/tern-cv/5bf7ae21-a454-440b-bdd7-f2fe982d8de4",
+        identifier=site_uri,
+        is_sample_of=StateOrTerritory.WA.value,
+        is_result_of=site_establishment_uri,
+        location_description=value(row["locationRemarks"]),
+        in_dataset=record,
+        has_geometry=site_point,
+    )
+
+    site_establishment = Sampling(
+        id=site_establishment_uri,
+        comment="Site establishment",
+        has_feature_of_interest=site,
+        was_associated_with=recorded_by,
+        used_procedure=EX["site-establishment-method"],
+        result_time=occurrence_sampling_datetime,
+        has_result=site,
+        in_dataset=record,
+    )
+
+    site_visit = SiteVisit(
+        id=EX[str(uuid4())],
+        started_at_time=occurrence_sampling_datetime,
+        has_site=site,
+        in_dataset=record,
+    )
+
+    insert_data({**jsonld_context, **site.dict(by_alias=True)}, g)
+    insert_data({**jsonld_context, **site_establishment.dict(by_alias=True)}, g)
+    insert_data({**jsonld_context, **site_visit.dict(by_alias=True)}, g)
+
+    ### End Site
+
+    ### Occurrence sampling
+
     occurrence_sampling_id = EX[str(uuid4())]
 
     occurrence = Sample(
         id=EX[str(uuid4())],
         identifier=value(row["occurrenceID"]),
         comment="occurrence",
-        is_sample_of=StateOrTerritory.WA.value,
+        is_sample_of=site,
         is_result_of=occurrence_sampling_id,
         feature_type="http://linked.data.gov.au/def/tern-cv/2361dea8-598c-4b6f-a641-2b98ff199e9e",
         in_dataset=record,
     )
 
-    recorded_by = Person(
-        id=BNode().n3(), name=value(row["recordedBy"]), in_dataset=record
-    )
-
     occurrence_sampling = Sampling(
         id=occurrence_sampling_id,
         identifier=value(row["fieldNumber"]),
-        has_feature_of_interest=StateOrTerritory.WA.value,
+        has_feature_of_interest=site,
         sampling_type=BDR_CV[create_uriref(value(row["samplingProtocol"]))]
         if value(row["samplingProtocol"])
         else None,
-        has_geometry=occurrence_sampling_point,
         sf_within=[
             "https://sws.geonames.org/2077456/",
             StateOrTerritory.WA.value,
@@ -148,7 +189,7 @@ for i, row in df.iterrows():
     specimen_sampling = Sampling(
         id=specimen_sampling_id,
         used_procedure=Procedure(
-            id=BNode().n3(), description=value(row["preparations"])
+            id=EX["specimen-sampling"], description=value(row["preparations"])
         ),
         result_time=occurrence_sampling_datetime,
         was_associated_with=recorded_by,
@@ -309,4 +350,7 @@ for i, row in df.iterrows():
         g,
     )
 
-g.serialize("output.ttl")
+if transform_single_record:
+    g.serialize("output-row-2.ttl")
+else:
+    g.serialize("output.ttl")

@@ -1,6 +1,6 @@
 from rdflib import Graph, DCTERMS, SOSA, PROV, SDO, VOID, TIME
 
-from src.namespaces import EX, TERN, TERN_LOC, GEO, WGS, DWC
+from src.namespaces import EX, TERN, TERN_LOC, GEO, WGS, DWC, SF
 
 
 def create_graph():
@@ -17,4 +17,5 @@ def create_graph():
     g.bind("dwc", DWC)
     g.bind("void", VOID)
     g.bind("time", TIME)
+    g.bind("sf", SF)
     return g

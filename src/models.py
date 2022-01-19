@@ -3,7 +3,7 @@ from typing import Optional, List, Union
 from pydantic import BaseModel, Field
 from rdflib import DCTERMS, SOSA, RDFS, SDO, PROV, VOID, RDF, TIME
 
-from src.namespaces import GEO, WGS, TERN_LOC, TERN, DWC
+from src.namespaces import GEO, WGS, TERN_LOC, TERN, DWC, SF
 
 
 class Base(BaseModel):
@@ -75,11 +75,11 @@ class Geometry(Base):
 
 
 class Point(Geometry):
-    type: str = Field(GEO.Point, alias="@type")
+    type: str = Field(SF.Point, alias="@type")
     lat: str = Field(alias=WGS.lat)
     long: str = Field(alias=WGS.long)
     elevation: Optional[str] = Field(alias=TERN_LOC.elevation)
-    coordinate_uncertainty: str = Field(alias=TERN_LOC.coordinateUncertainty)
+    has_metric_spatial_accuracy: str = Field(alias=GEO.hasMetricSpatialAccuracy)
 
 
 class Procedure(Base):
@@ -127,9 +127,22 @@ class FeatureOfInterest(Base):
 class Sample(FeatureOfInterest):
     type: str = Field(TERN.Sample, alias="@type")
     identifier: str = Field(alias=DCTERMS.identifier)
-    comment: str = Field(alias=RDFS.comment)
+    comment: Optional[str] = Field(alias=RDFS.comment)
     is_sample_of: Union[str, "Sample"] = Field(alias=SOSA.isSampleOf)
     is_result_of: Union[str, Sampling] = Field(alias=SOSA.isResultOf)
+    has_geometry: Optional[Geometry] = Field(alias=GEO.hasGeometry)
+
+
+class Site(Sample):
+    type: str = Field(TERN.Site, alias="@type")
+    sf_within: Optional[List[str]] = Field(alias=GEO.sfWithin)
+    location_description: str = Field(alias=TERN.locationDescription)
+
+
+class SiteVisit(Base):
+    type: str = Field(TERN.SiteVisit, alias="@type")
+    started_at_time: str = Field(alias=PROV.startedAtTime)
+    has_site: Site = Field(alias=TERN.hasSite)
 
 
 class MaterialSample(Sample):
@@ -144,3 +157,5 @@ MaterialSample.update_forward_refs()
 Observation.update_forward_refs()
 Taxon.update_forward_refs()
 Person.update_forward_refs()
+Site.update_forward_refs()
+SiteVisit.update_forward_refs()

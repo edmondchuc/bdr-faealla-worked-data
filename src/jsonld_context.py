@@ -16,10 +16,15 @@ jsonld_context = {
         TERN.featureType: {"@type": "@id"},
         DCTERMS.license: {"@type": "@id"},
         TERN_LOC.coordinateUncertainty: {"@type": XSD.double},
-        DCTERMS.source: {"@type": "@id"},
+        DCTERMS.source: {"@type": XSD.anyURI},
         DCTERMS.rightsHolder: {"@type": "@id"},
         TIME.inXSDDateTimeStamp: {"@type": XSD.dateTimeStamp},
         SOSA.observedProperty: {"@type": "@id"},
         DWC.taxonConceptID: {"@type": "@id"},
+        SOSA.isResultOf: {"@type": "@id"},
+        SOSA.isSampleOf: {"@type": "@id"},
+        DCTERMS.subject: {"@type": "@id"},
+        TERN.attribute: {"@type": "@id"},
+        GEO.hasMetricSpatialAccuracy: {"@type": XSD.double},
     }
 }
