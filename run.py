@@ -9,6 +9,7 @@ from src import value, create_uriref, insert_data
 from src.graph import create_graph
 from src.jsonld_context import jsonld_context
 from src.models import (
+    Geometry,
     MaterialSample,
     Point,
     Procedure,
@@ -90,12 +91,10 @@ for i, row in df.iterrows():
     ### Site
 
     site_establishment_uri = EX[str(uuid4())]
-    site_uri = EX[str(uuid4())]
+    site_uri = "https://linked.data.gov.au/dataset/bdr/site/" + str(uuid4())
 
-    site_point = Point(
+    site_point = Geometry(
         id=BNode().n3(),
-        lat=value(row["decimalLatitude"]),
-        long=value(row["decimalLongitude"]),
         as_wkt=f"POINT({value(row['decimalLongitude'])} {value(row['decimalLatitude'])})",
         elevation=str(value(row["verbatimElevation"])).replace(" ", "").replace("m", "")
         if value(row["verbatimElevation"])
