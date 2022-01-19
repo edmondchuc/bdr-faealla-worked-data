@@ -72,6 +72,8 @@ class Person(Agent):
 class Geometry(Base):
     type: str = Field(GEO.Geometry, alias="@type")
     as_wkt: str = Field(alias=GEO.asWKT)
+    elevation: Optional[str] = Field(alias=TERN_LOC.elevation)
+    has_metric_spatial_accuracy: str = Field(alias=GEO.hasMetricSpatialAccuracy)
 
 
 class Point(Geometry):
