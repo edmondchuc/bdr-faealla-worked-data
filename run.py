@@ -11,7 +11,6 @@ from src.jsonld_context import jsonld_context
 from src.models import (
     Geometry,
     MaterialSample,
-    Point,
     Procedure,
     RDFDataset,
     Sampling,
