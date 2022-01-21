@@ -1,4 +1,4 @@
-from rdflib import XSD, SOSA, DCTERMS, TIME
+from rdflib import XSD, SOSA, DCTERMS, TIME, PROV
 
 from src.namespaces import TERN_LOC, WGS, GEO, TERN, DWC
 
@@ -26,5 +26,6 @@ jsonld_context = {
         DCTERMS.subject: {"@type": "@id"},
         TERN.attribute: {"@type": "@id"},
         GEO.hasMetricSpatialAccuracy: {"@type": XSD.double},
+        PROV.startedAtTime: {"@type": XSD.dateTime},
     }
 }
