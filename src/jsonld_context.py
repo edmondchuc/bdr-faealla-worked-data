@@ -27,5 +27,6 @@ jsonld_context = {
         TERN.attribute: {"@type": "@id"},
         GEO.hasMetricSpatialAccuracy: {"@type": XSD.double},
         PROV.startedAtTime: {"@type": XSD.dateTime},
+        SOSA.hasSimpleResult: {"@type": XSD.string},
     }
 }

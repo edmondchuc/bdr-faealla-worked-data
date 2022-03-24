@@ -26,13 +26,13 @@ from src.models import (
 )
 from src.namespaces import EX, BDR_CV
 
-transform_single_record = False
+TRANSFORM_SINGLE_RECORD = False
 
 g = create_graph()
 
-csv_filename = "records-2021-12-01.csv"
+CSV_FILENAME = "records-2021-12-01.csv"
 
-df = pd.read_csv(csv_filename)
+df = pd.read_csv(CSV_FILENAME)
 
 
 class StateOrTerritory(Enum):
@@ -42,7 +42,7 @@ class StateOrTerritory(Enum):
 for i, row in df.iterrows():
 
     # If debug is on, only process the data in the third row.
-    if transform_single_record and i != 1:
+    if TRANSFORM_SINGLE_RECORD and i != 1:
         continue
 
     ### RDFDataset (Record)
@@ -243,7 +243,7 @@ for i, row in df.iterrows():
         in_dataset=record,
         was_associated_with=recorded_by,
         has_feature_of_interest=occurrence,
-        has_simple_result=value(row["habitat"]),
+        has_simple_result=str(value(row["habitat"])),
         has_result=Text(id=BNode().n3(), value=value(row["habitat"])),
         observed_property="http://linked.data.gov.au/def/tern-cv/2090cfd9-8b6b-497b-9512-497456a18b99",
         phenomenon_time=TimeInstant(
@@ -290,14 +290,14 @@ for i, row in df.iterrows():
             g,
         )
 
-    specimen_taxon_result_id = BNode().n3()
+    specimen_taxon_result_id = value(row["taxonConceptID"])
     specimen_observation = Observation(
         id=EX[str(uuid4())],
         comment="specimen taxonomic information",
         in_dataset=record,
         was_associated_with=identified_by,
         has_feature_of_interest=specimen,
-        has_simple_result=specimen_taxon_result_id,
+        has_simple_result=str(value(row["scientificName"])),
         has_result=Taxon(
             id=specimen_taxon_result_id,
             in_dataset=record,
@@ -328,7 +328,7 @@ for i, row in df.iterrows():
     )
 
     new_jsonld_context = {**jsonld_context}
-    new_jsonld_context["@context"][SOSA.hasSimpleResult] = {"@type": "@id"}
+    # new_jsonld_context["@context"][SOSA.hasSimpleResult] = {"@type": "@id"}
     insert_data({**new_jsonld_context, **specimen_observation.dict(by_alias=True)}, g)
 
     ### End of specimen observations
@@ -348,7 +348,7 @@ for i, row in df.iterrows():
         g,
     )
 
-if transform_single_record:
-    g.serialize("output-row-2.ttl")
+if TRANSFORM_SINGLE_RECORD:
+    g.serialize("output-row-2.ttl", format="longturtle")
 else:
-    g.serialize("output.ttl")
+    g.serialize("output.ttl", format="longturtle")
