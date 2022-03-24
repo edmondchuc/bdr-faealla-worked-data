@@ -16,6 +16,10 @@ The [run.py](run.py) script is used to convert the CSV file to RDF.
 
 - [Mapped Faealla spreadsheet](https://docs.google.com/spreadsheets/d/1p3scX7z6wPQ0vtG-Bo_yoYcvRRs8muGm/edit?usp=sharing&ouid=108129827562056706312&rtpof=true&sd=true)
 
+## Visualising the RDF data in Ontodia
+
+View the data in Ontodia at https://ternaustralia.github.io/bdr-faealla-worked-example.
+
 ## Conceptual modelling assumptions
 
 The worked example was created based on the following assumptions:
