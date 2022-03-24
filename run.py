@@ -266,7 +266,7 @@ for i, row in df.iterrows():
     if value(row["typeStatus"]):
         specimen_type_status_observation = Observation(
             id=EX[str(uuid4())],
-            comment="speciment type status",
+            comment="specimen type status",
             in_dataset=record,
             was_associated_with=identified_by,
             has_feature_of_interest=specimen,
