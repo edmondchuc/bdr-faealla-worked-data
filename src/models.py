@@ -8,6 +8,7 @@ from src.namespaces import GEO, WGS, TERN_LOC, TERN, DWC, SF
 
 class Base(BaseModel):
     id: str = Field(alias="@id")
+    # label: str = Field(alias=str(RDFS.label))
     type: str = Field(alias="@type")
     in_dataset: Optional["RDFDataset"] = Field(alias=str(VOID.inDataset))
 
@@ -114,6 +115,7 @@ class TimeInstant(Base):
     date: Optional[str] = Field(alias=str(TIME.inXSDDate))
 
 
+# TODO: Add site visit relationship
 class Observation(Activity):
     type: str = Field(TERN.Observation, alias="@type")
     has_result: Value = Field(alias=str(SOSA.hasResult))

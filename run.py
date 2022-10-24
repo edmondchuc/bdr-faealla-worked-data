@@ -3,7 +3,7 @@ from uuid import uuid4
 from datetime import datetime
 
 import pandas as pd
-from rdflib import BNode, SOSA
+from rdflib import RDFS, BNode, Literal, URIRef
 
 from src import value, create_uriref, insert_data
 from src.graph import create_graph
@@ -48,21 +48,24 @@ for i, row in df.iterrows():
     ### RDFDataset (Record)
 
     attr_country_code = Attribute(
-        id=BNode().n3(),
+        id=EX[str(uuid4())],
+        label="Attribute - country code",
         attribute=BDR_CV["country-code"],
         has_simple_value=value(row["countryCode"]),
-        has_value=Text(id=BNode().n3(), value=value(row["countryCode"])),
+        has_value=Text(id=EX[str(uuid4())], value=value(row["countryCode"])),
     )
 
     attr_provenance = Attribute(
-        id=BNode().n3(),
+        id=EX[str(uuid4())],
+        label="Attribute - provenance",
         attribute=BDR_CV["provenance"],
         has_simple_value=value(row["provenance"]),
-        has_value=Text(id=BNode().n3(), value=value(row["provenance"])),
+        has_value=Text(id=EX[str(uuid4())], value=value(row["provenance"])),
     )
 
     record = RDFDataset(
         id=EX[str(uuid4())],
+        label=f"RDFDataset - {value(row['recordID'])}",
         identifier=value(row["recordID"]),
         license="https://creativecommons.org/licenses/by/4.0/",
         subject=BDR_CV[create_uriref(row["collectionCode"])],
@@ -75,7 +78,7 @@ for i, row in df.iterrows():
     ### End RDFDataset (Record)
 
     recorded_by = Person(
-        id=BNode().n3(), name=value(row["recordedBy"]), in_dataset=record
+        id=EX[str(uuid4())], name=value(row["recordedBy"]), in_dataset=record
     )
 
     event_date = value(row["eventDate"])
@@ -93,7 +96,7 @@ for i, row in df.iterrows():
     site_uri = "https://linked.data.gov.au/dataset/bdr/site/" + str(uuid4())
 
     site_point = Geometry(
-        id=BNode().n3(),
+        id=EX[str(uuid4())],
         as_wkt=f"POINT({value(row['decimalLongitude'])} {value(row['decimalLatitude'])})",
         elevation=str(value(row["verbatimElevation"])).replace(" ", "").replace("m", "")
         if value(row["verbatimElevation"])
@@ -208,10 +211,10 @@ for i, row in df.iterrows():
             was_associated_with=recorded_by,
             has_feature_of_interest=occurrence,
             has_simple_result=value(row["sex"]),
-            has_result=Text(id=BNode().n3(), value=value(row["sex"])),
+            has_result=Text(id=EX[str(uuid4())], value=value(row["sex"])),
             observed_property="http://linked.data.gov.au/def/tern-cv/05cbf534-c233-4aa8-a08c-00b28976ed36",
             phenomenon_time=TimeInstant(
-                id=BNode().n3(), date_timestamp=occurrence_sampling_datetime
+                id=EX[str(uuid4())], date_timestamp=occurrence_sampling_datetime
             ),
             result_time=occurrence_sampling_datetime,
             used_procedure=BDR_CV["occurrence-method"],
@@ -226,10 +229,10 @@ for i, row in df.iterrows():
         was_associated_with=recorded_by,
         has_feature_of_interest=occurrence,
         has_simple_result=value(row["lifeStage"]),
-        has_result=Text(id=BNode().n3(), value=value(row["lifeStage"])),
+        has_result=Text(id=EX[str(uuid4())], value=value(row["lifeStage"])),
         observed_property="http://linked.data.gov.au/def/tern-cv/abb0ee19-b2e8-42f3-8a25-d1f39ca3ebc3",
         phenomenon_time=TimeInstant(
-            id=BNode().n3(), date_timestamp=occurrence_sampling_datetime
+            id=EX[str(uuid4())], date_timestamp=occurrence_sampling_datetime
         ),
         result_time=occurrence_sampling_datetime,
         used_procedure=BDR_CV["occurrence-method"],
@@ -244,10 +247,10 @@ for i, row in df.iterrows():
         was_associated_with=recorded_by,
         has_feature_of_interest=occurrence,
         has_simple_result=str(value(row["habitat"])),
-        has_result=Text(id=BNode().n3(), value=value(row["habitat"])),
+        has_result=Text(id=EX[str(uuid4())], value=value(row["habitat"])),
         observed_property="http://linked.data.gov.au/def/tern-cv/2090cfd9-8b6b-497b-9512-497456a18b99",
         phenomenon_time=TimeInstant(
-            id=BNode().n3(), date_timestamp=occurrence_sampling_datetime
+            id=EX[str(uuid4())], date_timestamp=occurrence_sampling_datetime
         ),
         result_time=occurrence_sampling_datetime,
         used_procedure=BDR_CV["occurrence-method"],
@@ -260,7 +263,7 @@ for i, row in df.iterrows():
     ### Specimen observations
 
     identified_by = Person(
-        id=BNode().n3(), name=value(row["identifiedBy"]), in_dataset=record
+        id=EX[str(uuid4())], name=value(row["identifiedBy"]), in_dataset=record
     )
 
     if value(row["typeStatus"]):
@@ -271,10 +274,10 @@ for i, row in df.iterrows():
             was_associated_with=identified_by,
             has_feature_of_interest=specimen,
             has_simple_result=value(row["typeStatus"]),
-            has_result=Text(id=BNode().n3(), value=value(row["typeStatus"])),
+            has_result=Text(id=EX[str(uuid4())], value=value(row["typeStatus"])),
             observed_property="http://linked.data.gov.au/def/bdr-cv/specimen-type-status",
             phenomenon_time=TimeInstant(
-                id=BNode().n3(),
+                id=EX[str(uuid4())],
                 date_timestamp=datetime.fromisoformat(
                     f"{value(row['dateIdentified'])}-01-01"
                 ).isoformat(),
@@ -316,7 +319,7 @@ for i, row in df.iterrows():
         ),
         observed_property="http://linked.data.gov.au/def/tern-cv/70646576-6dc7-4bc5-a9d8-c4c366850df0",
         phenomenon_time=TimeInstant(
-            id=BNode().n3(),
+            id=EX[str(uuid4())],
             date_timestamp=datetime.fromisoformat(
                 f"{value(row['dateIdentified'])}-01-01"
             ).isoformat(),
@@ -346,6 +349,14 @@ for i, row in df.iterrows():
             **specimen_sampling.dict(by_alias=True),
         },
         g,
+    )
+
+    g.add(
+        (
+            URIRef("http://linked.data.gov.au/dataset/asgs2016/stateorterritory/5"),
+            RDFS.label,
+            Literal("Western Australia"),
+        )
     )
 
 if TRANSFORM_SINGLE_RECORD:
