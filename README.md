@@ -42,5 +42,5 @@ The worked example was created based on the following assumptions:
 
 ## Contact
 
-Edmond Chuc  
-e.chuc@uq.edu.au
+TERN Support 
+esupport@tern.org.au
